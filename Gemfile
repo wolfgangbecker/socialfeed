@@ -41,10 +41,16 @@ gem 'i18n-tasks'
 # Pagination
 gem 'kaminari'
 
+group :development do
+	gem "erb2haml"
+end
+
 # Testing
-gem 'rspec-rails'
-gem 'cucumber-rails'
-gem 'factory_girl_rails'
+group :test, :development do
+	gem 'rspec-rails'
+	gem 'cucumber-rails', require: false
+	gem 'factory_girl_rails'
+end
 
 # Backend
 # gem 'activeadmin'
