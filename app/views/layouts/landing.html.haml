@@ -18,16 +18,7 @@
         = alert
     
     .container
-      .row
-        .col-xs-2
-          #icon
-            = image_tag "icon.svg", class: 'img-responsive'
-        .col-xs-8
-          #header
-            = render 'layouts/header'
-      #sidebar
       #content
         = yield
-      #footer
 
     = yield :bottom_js
