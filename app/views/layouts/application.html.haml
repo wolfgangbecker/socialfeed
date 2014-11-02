@@ -17,17 +17,16 @@
       %p.alert
         = alert
     
-    .container
-      .row
-        .col-xs-2
-          #icon
-            = image_tag "icon.svg", class: 'img-responsive'
-        .col-xs-8
-          #header
-            = render 'layouts/header'
-      #sidebar
-      #content
-        = yield
-      #footer
+    .main-container
+      .container-fluid
+        = render 'layouts/header'
+        .row
+          .col-xs-2
+            = render 'layouts/aside'
+          .col-xs-10
+            %main
+              = yield
+        .row
+          = render 'layouts/footer'
 
     = yield :bottom_js

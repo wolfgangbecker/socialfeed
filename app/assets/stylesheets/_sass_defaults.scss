@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Sass
+   ========================================================================== */
+   
+$font: verdana, arial, sans-serif;
+
+// $w: 940px;
+
+// $bg: #f1f2f7;
+// $dbg: #292d30;
+
+// $white: #FFF;
+// $gray: #969696;
+// $dgray: #525151;
+
+// $border: #b0b0b0;
+// $hover: #ececec;
+// $even: #f6f6f6;
+
+$primary: #34c6cd;
+// $dprimary: #00acaa;
+$secondary: #01939a;
+
+// $positive: #9cce00;
+// $negative: #db4015;
+// $warning: #f9cf17;
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@mixin linear-gradient($value...){
+    background: -moz-linear-gradient(left, $value); /* FF3.6+ */
+    background: -webkit-linear-gradient(left, $value); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, $value); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, $value); /* IE10+ */
+    // background: linear-gradient($value); /* W3C */
+}
