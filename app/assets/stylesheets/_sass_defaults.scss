@@ -1,25 +1,42 @@
 /* ==========================================================================
    Sass
    ========================================================================== */
-   
-$font: verdana, arial, sans-serif;
 
+/* ============================== 
+   Font Styles
+   ============================== */
+$font: verdana, arial, sans-serif;
+$fsbody: 16px;
+$fs-h1: 48px;
+$fs-h2: 36px;
+$fs-h3: 28px;
+$fs-h4: 18px;
 // $w: 940px;
 
+/* ============================== 
+   Colors
+   ============================== */
 // $bg: #f1f2f7;
 // $dbg: #292d30;
 
-// $white: #FFF;
-// $gray: #969696;
+$white: #f0f0f0;
+$black: #000000;
+$gray: #b2b2b2;
 // $dgray: #525151;
 
 // $border: #b0b0b0;
 // $hover: #ececec;
 // $even: #f6f6f6;
 
-$primary: #34c6cd;
-// $dprimary: #00acaa;
-$secondary: #01939a;
+$primary: #34c6cd; // blue (primary)
+$dprimary: #01939a; // dark primary
+$gdprimary: #4faaae; // grey dark primary
+$glprimary: #69b7ba; // grey light primary
+$selectedprimary: #01939a;
+
+$secondary: #f6cf7f; // beish
+
+
 
 // $positive: #9cce00;
 // $negative: #db4015;

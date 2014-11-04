@@ -1,20 +1,72 @@
 @import "sass_defaults";
 
+h1{
+  font-size: 42px;
+}
+
+p{
+  font-size: 16px;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
 .main-container {
   font-family: $font;
 
-  .header{
-    @include linear-gradient($primary, $secondary);
-    color: white;
+  #header{
+    @include linear-gradient($primary, $dprimary);
+    color: $white;
+    .icon{
+      background-color: $dprimary;
+    }
+    .caret{
+      color: $dprimary;
+      size: 10px 10px;
+    }
   }
 
-  %aside {
+  #aside {
+    padding: 4px;
+    background-color: $primary;
+    .box{
+      padding: 4px;
+      background-color: $gdprimary;
+      a{
+        padding: 15px;
+        font-size: $fs-h4;
+        color: $black;
+        background-color: $glprimary;
+        margin-bottom: 4px;
+        &:active{
+          background-color: $selectedprimary;
+        }
+      } 
+    }
   }
 
-  %content {
+  #content {
   }
 
-  %footer{
+  #footer{
 
   }
 }
