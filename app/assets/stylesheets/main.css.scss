@@ -1,5 +1,13 @@
 @import "sass_defaults";
 
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+.icon {
+  font-family: 'socialfeed';
+}
+
 h1{
   font-size: 42px;
 }
@@ -12,10 +20,6 @@ p{
   padding: 0 !important;
   margin: 0 !important;
 }
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
 
 /* ==========================================================================
    Forms
@@ -33,12 +37,12 @@ p{
   font-family: $font;
 
   #header{
-    @include linear-gradient($primary, $dprimary);
+    @include linear-gradient(lighten($primary, 10%), $dprimary);
     color: $white;
-    .icon{
+    .logo{
       background-color: $dprimary;
     }
-    .caret{
+    .icon{
       color: $dprimary;
       size: 10px 10px;
     }
@@ -48,6 +52,7 @@ p{
     padding: 4px;
     background-color: $primary;
     .box{
+      margin-bottom: 4px;
       padding: 4px;
       background-color: $gdprimary;
       a{
@@ -56,10 +61,18 @@ p{
         color: $black;
         background-color: $glprimary;
         margin-bottom: 4px;
+        &:hover{
+          background-color: lighten($glprimary, 5%);
+        }
         &:active{
           background-color: $selectedprimary;
         }
-      } 
+      }
+      .follow-panel{
+        @include border-radius(5px);
+        background-color: $lightblue;
+        height: 20em;
+      }
     }
   }
 

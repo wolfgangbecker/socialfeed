@@ -30,9 +30,10 @@ $gray: #b2b2b2;
 
 $primary: #34c6cd; // blue (primary)
 $dprimary: #01939a; // dark primary
-$gdprimary: #4faaae; // grey dark primary
-$glprimary: #69b7ba; // grey light primary
+$gdprimary: #4faaae; // gray dark primary
+$glprimary: #69b7ba; // gray light primary
 $selectedprimary: #01939a;
+$lightblue: #69b7ba;
 
 $secondary: #f6cf7f; // beish
 
@@ -47,9 +48,27 @@ $secondary: #f6cf7f; // beish
    ========================================================================== */
 
 @mixin linear-gradient($value...){
-    background: -moz-linear-gradient(left, $value); /* FF3.6+ */
-    background: -webkit-linear-gradient(left, $value); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, $value); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, $value); /* IE10+ */
-    // background: linear-gradient($value); /* W3C */
+  background: -moz-linear-gradient(left, $value); /* FF3.6+ */
+  background: -webkit-linear-gradient(left, $value); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $value); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $value); /* IE10+ */
+  // background: linear-gradient($value); /* W3C */
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@function black($opacity){
+  @return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+  @return rgba(255,255,255,$opacity)
+}
+
+@mixin box-emboss($opacity, $opacity2){
+  box-shadow: white($opacity) 0 3px 0, inset black($opacity2) 0 3px 0;
 }
