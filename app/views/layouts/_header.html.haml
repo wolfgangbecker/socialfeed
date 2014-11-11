@@ -12,7 +12,15 @@
                 Socialfeed
               %p
                 Simple feed-aggregator with social functionality
-          .row
-            .col-xs-1
-              .icon
-                b
+        .col-xs-3.dropdown
+          .btn.pull-right.dropdown-toggle#user-dropdown{data: {toggle: "dropdown"}}
+            %span
+              John Doe
+            %span.icon
+              b
+          %ul.dropdown-menu.dropdown-menu-right{aria: {labelledby: "user-dropdown"}}
+            %li
+              %a{href: "#"}
+                Preferences
+            %li
+              = link_to t('.sign_out'), destroy_user_session_path, method: :delete

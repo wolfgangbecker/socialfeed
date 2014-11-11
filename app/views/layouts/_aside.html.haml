@@ -21,8 +21,23 @@
   .row
     .col-xs-12
       .box
-        %span
-          = t('.following')
-        .icon
-          
+        .title.text-center
+          %span
+            = t('.following')
+          .btn.sidebar-btn.icon
+            g
         .follow-panel.pre-scrollable
+          // repeat for every user {
+          .row.user
+            .col-xs-9.name
+              John
+            .col-xs-2
+              .btn.sidebar-btn.icon
+                e
+          // }
+          .row.user
+            .col-xs-9.name
+              Pablo
+            .col-xs-2
+              .btn.sidebar-btn.icon
+                e
