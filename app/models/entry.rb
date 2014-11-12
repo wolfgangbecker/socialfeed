@@ -1,11 +1,11 @@
-class Feed < ActiveRecord::Base
+class Entry < ActiveRecord::Base
 
   #
   # schema
   #
   fields do
     title       :string
-  	url         :string
+    url         :string
     description :text
     timestamps
   end
@@ -23,8 +23,5 @@ class Feed < ActiveRecord::Base
   #
   # Methods
   # 
-  def get_entries
-    Feedjira::Feed.fetch_and_parse(url).entries
-  end
 
 end
