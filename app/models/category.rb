@@ -18,7 +18,8 @@ class Category < ActiveRecord::Base
   #
   # Relations
   # 
-
+  has_many   :feeds
+  belongs_to :user
   #
   # Methods
   # 

@@ -11,26 +11,74 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141008012810) do
+ActiveRecord::Schema.define(:version => 20141113024605) do
 
-  create_table "feeds", :force => true do |t|
-    t.string "url"
+  create_table "categories", :force => true do |t|
+    t.string  "name"
+    t.string  "tags"
+    t.text    "description"
+    t.integer "user_id"
   end
 
+  add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
+
+  create_table "entries", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "feed_id"
+  end
+
+  add_index "entries", ["feed_id"], :name => "index_entries_on_feed_id"
+
+  create_table "feeds", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  add_index "feeds", ["category_id"], :name => "index_feeds_on_category_id"
+
+  create_table "filters", :force => true do |t|
+    t.string   "keywords"
+    t.boolean  "type"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "feed_id"
+  end
+
+  add_index "filters", ["feed_id"], :name => "index_filters_on_feed_id"
+
+  create_table "notifications", :force => true do |t|
+    t.string  "keywords"
+    t.integer "feed_id"
+  end
+
+  add_index "notifications", ["feed_id"], :name => "index_notifications_on_feed_id"
+
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                   :default => "",   :null => false
+    t.string   "encrypted_password",      :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.integer  "sign_in_count",           :default => 0,    :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "name"
+    t.boolean  "notify_new_follower",     :default => true
+    t.boolean  "notify_site_updates",     :default => true
+    t.boolean  "notify_important_topics", :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -16,7 +16,7 @@ class Notification < ActiveRecord::Base
   #
   # Relations
   # 
-
+  belongs_to :feed
   #
   # Methods
   # 

@@ -37,7 +37,8 @@ class User < ActiveRecord::Base
   #
   # Relations
   # 
-
+  has_many :categories
+  has_many :feeds, through: :categories
   #
   # Methods
   # 

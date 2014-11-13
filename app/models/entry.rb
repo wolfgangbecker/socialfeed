@@ -19,7 +19,7 @@ class Entry < ActiveRecord::Base
   #
   # Relations
   # 
-
+  belongs_to :feed
   #
   # Methods
   # 

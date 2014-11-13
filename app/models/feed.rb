@@ -19,7 +19,10 @@ class Feed < ActiveRecord::Base
   #
   # Relations
   # 
-
+  has_many   :entries
+  has_one    :notification
+  has_one    :filter
+  belongs_to :category
   #
   # Methods
   # 
