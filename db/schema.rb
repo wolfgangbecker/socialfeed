@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141113024605) do
+ActiveRecord::Schema.define(:version => 20141114025909) do
 
   create_table "categories", :force => true do |t|
     t.string  "name"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20141113024605) do
   end
 
   add_index "filters", ["feed_id"], :name => "index_filters_on_feed_id"
+
+  create_table "followings", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "followed_id"
+  end
+
+  add_index "followings", ["followed_id"], :name => "index_followings_on_followed_id"
+  add_index "followings", ["user_id"], :name => "index_followings_on_user_id"
 
   create_table "notifications", :force => true do |t|
     t.string  "keywords"
