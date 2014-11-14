@@ -38,9 +38,9 @@ class User < ActiveRecord::Base
   # Relations
   # 
   has_many :followings
-  has_many :followed, through: :followings
+  has_many :followeds, through: :followings
   has_many :inverse_followings, class_name: "Following", :foreign_key => "followed_id"
-  has_many :inverse_followed, through: :inverse_following, :source => :user
+  has_many :inverse_followeds, through: :inverse_followings, :source => :user
 
   has_many :categories
   has_many :feeds, through: :categories
