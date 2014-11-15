@@ -21,9 +21,14 @@ p{
   font-size: 16px;
 }
 
-.nopadding {
-  padding: 0 !important;
-  margin: 0 !important;
+.no-padding{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.no-margin{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .top-spacing-1{
@@ -43,6 +48,8 @@ p{
    ========================================================================== */
 
 .main-container {
+  margin-left: -15px;
+  margin-right: -15px;
   font-family: $font;
 
   #header{
@@ -108,10 +115,21 @@ p{
   }
 
   #content {
+    margin-left: -30px;
     .dashboard{
-      background-color: $primary;
-      height: 50px;
+      background-color: $dprimary;
+      height: 65px;
       width: 100%;
+    }
+    .feeds{
+      padding: 15px;
+      .feed{
+        @include border-radius(10px);
+        width: 100%;
+        min-height: 70px;
+        max-height: 150px;
+        background-color: $secondary;
+      }
     }
   }
 

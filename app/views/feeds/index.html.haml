@@ -1,4 +1,8 @@
-.row
-  .col-xs-12
-    .dashboard
-      sdfsd
+.dashboard
+  -# inputs here
+.feeds.pre-scrollable
+  .row
+    .col-xs-12
+      = @feeds.each do |feed|
+        .feed
+          feed.title
