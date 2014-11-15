@@ -108,6 +108,11 @@ p{
   }
 
   #content {
+    .dashboard{
+      background-color: $primary;
+      height: 50px;
+      width: 100%;
+    }
   }
 
   #footer{

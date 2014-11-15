@@ -1,6 +1,8 @@
 Socialfeed::Application.routes.draw do
   devise_for :users
 
+  resources :feeds
+
   devise_scope :user do
     authenticated :user do
       root to: 'home#index', as: :authenticated_root

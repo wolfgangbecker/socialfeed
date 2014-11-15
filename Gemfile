@@ -60,7 +60,6 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'sass'
-  gem 'coffee-rails'
   gem 'bootstrap-sass'
 
   gem 'uglifier', '>= 1.0.3'
