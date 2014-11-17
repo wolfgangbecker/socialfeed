@@ -7,9 +7,10 @@ class Category < ActiveRecord::Base
     name        :string
     tags        :string
     description :text
+    timestamps
   end
 
-  attr_protected
+  attr_accessible :name, :tags, :description
 
   #
   # Validations
@@ -18,7 +19,7 @@ class Category < ActiveRecord::Base
   #
   # Relations
   # 
-  has_many   :feeds
+  has_many   :channels
   belongs_to :user
   #
   # Methods

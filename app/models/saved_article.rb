@@ -1,5 +1,4 @@
-class Entry < ActiveRecord::Base
-
+class SavedArticle < ActiveRecord::Base
   #
   # schema
   #
@@ -10,7 +9,7 @@ class Entry < ActiveRecord::Base
     timestamps
   end
   
-  attr_protected
+  attr_accessible :title, :url, :description
 
   #
   # Validations
@@ -19,9 +18,8 @@ class Entry < ActiveRecord::Base
   #
   # Relations
   # 
-  belongs_to :feed
+  belongs_to :channel
   #
   # Methods
   # 
-
 end

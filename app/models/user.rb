@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :notify_new_follower, :notify_site_updates, :notify_important_topics, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   #
   # schema
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   has_many :inverse_followeds, through: :inverse_followings, :source => :user
 
   has_many :categories
-  has_many :feeds, through: :categories
+  has_many :channels, through: :categories
   #
   # Methods
   # 

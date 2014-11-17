@@ -56,6 +56,9 @@ module Socialfeed
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Services
+    config.paths.add File.join('app', 'services'), glob: File.join('**', '*.rb')
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end

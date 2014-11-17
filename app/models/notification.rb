@@ -5,9 +5,10 @@ class Notification < ActiveRecord::Base
   #
   fields do
     keywords :string
+    timestamps
   end
 
-  attr_protected
+  attr_accessible :keywords
 
   #
   # Validations
@@ -16,7 +17,7 @@ class Notification < ActiveRecord::Base
   #
   # Relations
   # 
-  belongs_to :feed
+  belongs_to :channel
   #
   # Methods
   # 

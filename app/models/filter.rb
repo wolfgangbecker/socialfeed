@@ -10,7 +10,7 @@ class Filter < ActiveRecord::Base
     timestamps
   end
   
-  attr_protected
+  attr_accessible :keywords, :type, :active
 
   #
   # Validations
@@ -19,7 +19,7 @@ class Filter < ActiveRecord::Base
   #
   # Relations
   # 
-  belongs_to :feed
+  belongs_to :channel
   #
   # Methods
   # 

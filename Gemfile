@@ -31,6 +31,7 @@ gem 'carrierwave'
 
 # Errors
 gem 'better_errors'
+gem 'binding_of_caller'
 
 # Debugger
 gem 'pry-rails'

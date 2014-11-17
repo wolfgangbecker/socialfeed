@@ -1,7 +1,7 @@
 Socialfeed::Application.routes.draw do
   devise_for :users
 
-  resources :feeds
+  resources :channels
 
   devise_scope :user do
     authenticated :user do
