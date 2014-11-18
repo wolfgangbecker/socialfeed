@@ -1,0 +1,10 @@
+.entry
+  .row
+    .col-xs-2
+      = entry.name
+    .col-xs-2
+      = entry.published_at
+    .col-xs-2
+      = link_to entry.feed.name, feed_path(entry.feed)
+    .col-xs-12
+      = raw entry.summary

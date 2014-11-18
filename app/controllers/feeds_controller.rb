@@ -1,7 +1,11 @@
 class FeedsController < ApplicationController
+  respond_to :html
 
   def index
-    @feeds = Feed.first 10
+    feed = Feed.first
+    feed.update
+    @entries = feed.entries
+    respond_with @entries
   end
 
   def show

@@ -29,13 +29,6 @@ gem 'devise'
 # File Upload
 gem 'carrierwave'
 
-# Errors
-gem 'better_errors'
-gem 'binding_of_caller'
-
-# Debugger
-gem 'pry-rails'
-
 # Internationalization
 gem 'i18n-tasks'
 
@@ -44,6 +37,13 @@ gem 'kaminari'
 
 group :development do
 	gem "erb2haml"
+  # Errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # Debugger
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug' unless Gem.win_platform?
 end
 
 # Testing

@@ -123,12 +123,14 @@ p{
     }
     .feeds{
       padding: 15px;
-      .feed{
+      .entry{
         @include border-radius(10px);
         width: 100%;
-        min-height: 70px;
-        max-height: 150px;
         background-color: $secondary;
+        padding: 10px;
+        max-height: 200px;
+        margin-bottom: 15px;
+        overflow-x: hidden;
       }
     }
   }

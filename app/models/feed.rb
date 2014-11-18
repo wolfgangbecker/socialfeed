@@ -27,6 +27,7 @@ class Feed < ActiveRecord::Base
   #
   # Methods
   # 
+
   def get_latest_entries n
     entries.sort.first(n)
   end
