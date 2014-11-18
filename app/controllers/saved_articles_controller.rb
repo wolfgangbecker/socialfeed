@@ -1,2 +1,0 @@
-class SavedArticlesController < ApplicationController
-end

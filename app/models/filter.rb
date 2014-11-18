@@ -19,7 +19,7 @@ class Filter < ActiveRecord::Base
   #
   # Relations
   # 
-  belongs_to :channel
+  belongs_to :feed
   #
   # Methods
   # 

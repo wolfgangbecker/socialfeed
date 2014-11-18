@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141117000241) do
+ActiveRecord::Schema.define(:version => 20141118000247) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -24,16 +24,29 @@ ActiveRecord::Schema.define(:version => 20141117000241) do
 
   add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
-  create_table "channels", :force => true do |t|
+  create_table "entries", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "summary"
     t.string   "url"
-    t.string   "title"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.integer  "feed_id"
+  end
+
+  add_index "entries", ["feed_id"], :name => "index_entries_on_feed_id"
+
+  create_table "feeds", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
   end
 
-  add_index "channels", ["category_id"], :name => "index_channels_on_category_id"
+  add_index "feeds", ["category_id"], :name => "index_feeds_on_category_id"
 
   create_table "filters", :force => true do |t|
     t.string   "keywords"
@@ -41,10 +54,10 @@ ActiveRecord::Schema.define(:version => 20141117000241) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "channel_id"
+    t.integer  "feed_id"
   end
 
-  add_index "filters", ["channel_id"], :name => "index_filters_on_channel_id"
+  add_index "filters", ["feed_id"], :name => "index_filters_on_feed_id"
 
   create_table "followings", :force => true do |t|
     t.datetime "created_at"
@@ -58,23 +71,12 @@ ActiveRecord::Schema.define(:version => 20141117000241) do
 
   create_table "notifications", :force => true do |t|
     t.string   "keywords"
-    t.integer  "channel_id"
+    t.integer  "feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "notifications", ["channel_id"], :name => "index_notifications_on_channel_id"
-
-  create_table "saved_articles", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.string   "url"
-    t.text     "description"
-    t.integer  "channel_id"
-  end
-
-  add_index "saved_articles", ["channel_id"], :name => "index_saved_articles_on_channel_id"
+  add_index "notifications", ["feed_id"], :name => "index_notifications_on_feed_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                   :default => "",   :null => false

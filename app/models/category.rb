@@ -19,7 +19,7 @@ class Category < ActiveRecord::Base
   #
   # Relations
   # 
-  has_many   :channels
+  has_many   :feeds
   belongs_to :user
   #
   # Methods

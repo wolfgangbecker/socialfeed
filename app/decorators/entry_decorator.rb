@@ -1,4 +1,4 @@
-class ChannelDecorator < Draper::Decorator
+class EntryDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
