@@ -1,6 +1,7 @@
 class EntryDecorator < Draper::Decorator
   delegate_all
 
+  decorates_association :feed
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -10,4 +11,7 @@ class EntryDecorator < Draper::Decorator
   #     end
   #   end
 
+  def feed_name
+    object.feed.name || I18n.t('placeholders.untitled')    
+  end
 end

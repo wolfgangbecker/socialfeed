@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :notify_new_follower, :notify_site_updates, :notify_important_topics, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  after_create :associate_undefined_category
   #
   # schema
   #
@@ -47,5 +48,7 @@ class User < ActiveRecord::Base
   #
   # Methods
   # 
-
+  def associate_undefined_category
+    Category.create! name: I18n.t('placeholders.undefined'), editable: false, user_id: self.id
+  end
 end

@@ -8,6 +8,7 @@ class Feed < ActiveRecord::Base
     name        :string
     url         :string
     description :text
+    etag        :string
     timestamps
   end
   
@@ -32,8 +33,11 @@ class Feed < ActiveRecord::Base
     entries.sort.first(n)
   end
 
-  def update
+  def update_entries
     feed = Feedjira::Feed.fetch_and_parse(url)
-    Entry.add_entries(feed.entries, self.id)
+    unless self.etag == feed.etag
+      self.etag = feed.etag
+      Entry.add_entries(feed.entries, self.id)
+    end
   end
 end

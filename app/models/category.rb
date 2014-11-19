@@ -7,10 +7,11 @@ class Category < ActiveRecord::Base
     name        :string
     tags        :string
     description :text
+    editable    :boolean, default: true
     timestamps
   end
 
-  attr_accessible :name, :tags, :description
+  attr_accessible :name, :tags, :description, :editable, :user_id
 
   #
   # Validations
