@@ -1,4 +1,5 @@
 .dashboard
 .feeds
-  - @entries.each do |entry|
-    = render 'entry', entry: entry
+  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+    - @entries.each do |entry|
+      = render 'entry', entry: entry

@@ -132,9 +132,13 @@ p{
         width: 100%;
         background-color: $secondary;
         padding: 10px;
-        max-height: 200px;
         margin-bottom: 15px;
         overflow-x: hidden;
+        .panel-heading, .panel-body{
+          color: inherit;
+          background-color: inherit;
+          border: none;
+        }
       }
     }
   }

@@ -1,14 +1,18 @@
-.entry
-  .row
-    .col-xs-4
-      .name.pull-left
-        = entry.name
-    .col-xs-4
-      .published-at
-        = entry.published_at
-    .col-xs-4
-      .channel.pull-right
-        = link_to entry.feed_name, feed_path(entry.feed)
-    .col-xs-12
-      .summary
-        = raw entry.summary
+.entry.panel.panel-default
+  #headingOne.panel-heading{:role => "tab"}
+    .panel-title
+      %a.collapsed{"aria-controls" => "collapse#{entry.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{entry.id}"}
+        .row
+          .col-xs-6
+            .name.pull-left
+              = entry.name
+          .col-xs-4
+            .published-at
+              = entry.published_at
+          .col-xs-2
+            .channel.pull-right
+              = link_to entry.feed_name, feed_path(entry.feed)
+          .col-xs-12
+  .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "collapse#{entry.id}"}
+    .panel-body.summary
+      = raw entry.summary
