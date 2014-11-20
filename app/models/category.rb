@@ -20,7 +20,7 @@ class Category < ActiveRecord::Base
   #
   # Relations
   # 
-  has_many   :feeds
+  has_many   :feeds, dependent: :destroy
   belongs_to :user
   #
   # Methods

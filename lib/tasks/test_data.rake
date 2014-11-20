@@ -17,6 +17,11 @@ namespace :demo do
     Rake::Task["demo:create_feeds"].execute
   end
 
+  task :destroy_all => [:environment] do
+    puts "Destroying All"
+    [User, Category, Feed, Filter, Notification].each(&:destroy_all)
+  end
+
   task :create_users => [:environment] do
     puts "Creating Users"
     User.create!(name: 'pepe', email: 'pepe@pepe.com', password: 'pepepepe') unless User.exists? email: 'pepe@pepe.com'
@@ -27,16 +32,16 @@ namespace :demo do
 
   task :create_categories => [:environment] do
     puts "Creating Categories"
-    Category.create!(name: 'News', description: 'Politics, Economy and Entertainment', user_id: User.where(name: 'jose').first.id) unless Category.exists? name: 'News', user_id: User.where(name: 'jose').first.id
-    Category.create!(name: 'Sports', description: 'Football, Volleyball and Basketball', user_id: User.where(name: 'pepe').first.id) unless Category.exists? name: 'Sports', user_id: User.where(name: 'pepe').first.id
-    Category.create!(name: 'Technology', description: 'Games, Mobile and Web applications news', user_id: User.where(name: 'pepe').first.id) unless Category.exists? name: 'Technology', user_id: User.where(name: 'pepe').first.id
+    Category.create!(name: 'News', description: 'Politics, Economy and Entertainment', user_id: User.where(email: 'jose@jose.com').first.id) unless Category.exists? name: 'News', user_id: User.where(email: 'jose@jose.com').first.id
+    Category.create!(name: 'Sports', description: 'Football, Volleyball and Basketball', user_id: User.where(email: 'pepe@pepe.com').first.id) unless Category.exists? name: 'Sports', user_id: User.where(email: 'pepe@pepe.com').first.id
+    Category.create!(name: 'Technology', description: 'Games, Mobile and Web applications news', user_id: User.where(email: 'pepe@pepe.com').first.id) unless Category.exists? name: 'Technology', user_id: User.where(email: 'pepe@pepe.com').first.id
   end
 
   task :create_feeds => [:environment] do
     puts "Creating Feeds"
-    Feed.create! name: 'News', description: 'Politics, Economy and Entertainment', url: 'http://www.theguardian.com/uk/rss'
-    Feed.create! name: 'Sports', description: 'Football, Volleyball and Basketball', url: 'https://sports.yahoo.com/blogs/rss.xml'
-    Feed.create! name: 'Technology', description: 'Games, Mobile and Web applications news', url: 'someurl'
+    Feed.create!(name: 'News', description: 'Politics, Economy and Entertainment', url: 'http://www.theguardian.com/uk/rss', category_id: Category.where(name: 'News').first.id) unless Feed.exists? name: 'News'
+    Feed.create!(name: 'Sports', description: 'Football, Volleyball and Basketball', url: 'https://sports.yahoo.com/blogs/rss.xml', category_id: Category.where(name: 'Sports').first.id) unless Feed.exists? name: 'Sports'
+    Feed.create!(name: 'Technology', description: 'Games, Mobile and Web applications news', url: 'http://www.ectnews.com/about/link-to-us.xhtml#rss', category_id: Category.where(name: 'Technology').first.id) unless Feed.exists? name: 'Technology'
   end
 
   task :create_filters => [:environment] do

@@ -5,14 +5,15 @@ class Feed < ActiveRecord::Base
   # schema
   #
   fields do
-    name        :string
-    url         :string
-    description :text
-    etag        :string
+    name          :string
+    url           :string
+    description   :text
+    etag          :string
+    last_modified :datetime
     timestamps
   end
   
-  attr_accessible :name, :url, :description
+  attr_accessible :name, :url, :description, :category_id
 
   #
   # Validations
@@ -35,8 +36,9 @@ class Feed < ActiveRecord::Base
 
   def update_entries
     feed = Feedjira::Feed.fetch_and_parse(url)
-    unless self.etag == feed.etag
+    unless self.etag == feed.etag && self.last_modified == feed.last_modified
       self.etag = feed.etag
+      self.last_modified = feed.last_modified
       Entry.add_entries(feed.entries, self.id)
     end
   end
