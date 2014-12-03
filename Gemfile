@@ -64,6 +64,7 @@ group :assets do
   gem 'bootstrap-sass'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails'
   # Front-End framework
   gem 'therubyracer', :platforms => :ruby
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
