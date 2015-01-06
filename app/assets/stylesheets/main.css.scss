@@ -11,6 +11,7 @@ body{
 .icon {
   color: $icongray;
   font-family: 'socialfeed';
+  font-size: 20px;
 }
 
 h1{
@@ -64,8 +65,19 @@ p{
     .logo{
       background-color: $dprimary;
     }
+    .brand{
+      margin-top: 55px;
+      img{
+        height: 75px;
+      }
+      p{
+        margin-top: 10px;
+        width: 340px;
+      }
+    }
     .icon{
       color: $white;
+      font-size: 14px;
     }
   }
 
@@ -108,12 +120,15 @@ p{
           @include border-radius(5px);
           margin: 0.5em 3em 0.5em 0.5em;
           font-size: $fs-h4;
-          padding: 0.5em;
+          padding: 0.4em 0.4em 0.4em 0;
           cursor: pointer;
           background-color: lighten($lightblue, 5%);
           width: 90%;
+          .btn{
+            background-color: lighten($lightblue, 10%);
+          }
           .name{
-            vertical-align: text-middle;
+            margin-top: 10px;
           }
         }
       }

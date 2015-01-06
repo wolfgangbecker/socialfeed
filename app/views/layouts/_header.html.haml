@@ -6,11 +6,10 @@
     .col-xs-9
       .row
         .col-xs-9
-          .row
-            .col-xs-12
-              %h1
-                Socialfeed
-              %p
+          .row.brand
+            .col-xs-6.col-xs-offset-4
+              = image_tag "brand.svg", class: 'img-responsive'
+              %p.text-center
                 Simple feed-aggregator with social functionality
         .col-xs-3.dropdown
           .btn.pull-right.dropdown-toggle#user-dropdown{data: {toggle: "dropdown"}}
