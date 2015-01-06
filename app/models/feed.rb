@@ -36,6 +36,7 @@ class Feed < ActiveRecord::Base
 
   def update_entries
     feed = Feedjira::Feed.fetch_and_parse(url)
+    raise 'Feed format issue' if feed.is_a? Numeric
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       self.etag = feed.etag
       self.last_modified = feed.last_modified
