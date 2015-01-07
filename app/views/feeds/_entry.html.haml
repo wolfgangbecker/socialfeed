@@ -3,15 +3,18 @@
     .panel-title
       %a.collapsed{"aria-controls" => "collapse#{entry.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{entry.id}"}
         .row
-          .col-xs-6
+          .col-xs-5
             .name.pull-left
-              = entry.name
+              = truncate entry.name, length: 40
           .col-xs-4
             .published-at
-              = entry.published_at
+              = time_ago_in_words entry.published_at
           .col-xs-2
-            .channel.pull-right
+            .feed.pull-right
               = link_to entry.feed_name, feed_path(entry.feed)
+          .col-xs-1
+            .icon.pull-right{class: entry.favorite ? 'favorited' : 'unfavorited'}
+              c
           .col-xs-12
   .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "collapse#{entry.id}"}
     .panel-body.summary

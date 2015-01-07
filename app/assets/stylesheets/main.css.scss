@@ -155,6 +155,15 @@ p{
         padding: 10px;
         margin-bottom: 15px;
         overflow-x: hidden;
+        .panel-title .icon{
+          text-shadow: -1px 0 $turquoise, 0 1px $turquoise, 1px 0 $turquoise, 0 -1px $turquoise;
+          &.favorited{
+            color: $yellow;
+          }
+          &.unfavorited{
+            color: $white;
+          }
+        }
         .panel-heading, .panel-body{
           color: inherit;
           background-color: inherit;

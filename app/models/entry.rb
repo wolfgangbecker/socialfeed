@@ -8,6 +8,7 @@ class Entry < ActiveRecord::Base
     url          :string
     published_at :datetime
     guid         :string
+    favorite     :boolean
     timestamps
   end
   
