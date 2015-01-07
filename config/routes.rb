@@ -1,4 +1,9 @@
 Socialfeed::Application.routes.draw do
+  # Sidetiq web extension
+  require 'sidetiq/web'
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :users
 
   resources :feeds

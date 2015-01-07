@@ -11,6 +11,11 @@ gem 'sqlite3'
 # Feeds
 gem 'feedjira'
 
+# Background Processing
+gem 'sinatra', require: nil
+gem 'sidekiq'
+gem 'sidetiq'
+
 # DB Migrations
 gem 'hobo_fields'
 
