@@ -1,4 +1,4 @@
-.entry.panel.panel-default{id: "js-entry-id-#{entry.id}", class: read?(entry)}
+.entry.js-entry.panel.panel-default{id: "id-#{entry.id}", class: read?(entry)}
   #headingOne.panel-heading{:role => "tab"}
     .panel-title
       %a.collapsed{"aria-controls" => "collapse#{entry.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{entry.id}"}
@@ -17,8 +17,7 @@
               = link_to entry.feed, feed_path(entry.feed)
           .col-xs-2
             = read_link(entry)
-            .icon.pull-right{class: entry.favorite ? 'favorited' : 'unfavorited'}
-              c
+            = favorite_link(entry)
           .col-xs-12
   .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "collapse#{entry.id}"}
     .panel-body.summary

@@ -154,19 +154,15 @@ p{
         padding: 10px;
         margin-bottom: 15px;
         overflow-x: hidden;
-        &.unread{
-          background-color: $secondary;
-        }
+        background-color: $secondary;
         &.read{
           background-color: lighten($secondary, 15%);
         }
         .panel-title .icon{
           text-shadow: -1px 0 $turquoise, 0 1px $turquoise, 1px 0 $turquoise, 0 -1px $turquoise;
+          color: $white;
           &.favorited{
             color: $yellow;
-          }
-          &.unfavorited{
-            color: $white;
           }
         }
         .panel-heading, .panel-body{
