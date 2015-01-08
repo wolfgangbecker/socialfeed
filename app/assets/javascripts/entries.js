@@ -16,7 +16,14 @@
 				$(this).find('.js-read-link').text('Unread');
 				$(this).find('.js-read-link').attr('href', $(this).find('.js-read-link').attr('href').replace('read%5D=false', 'read%5D=true'));
 			}
-			data.favorite ? $(this).find('.icon').addClass('read') : $(this).find('.icon').removeClass('read');
+			if(data.favorite){ 
+				$(this).find('.js-favorite-link').attr('href', $(this).find('.js-favorite-link').attr('href').replace('favorite%5D=true', 'favorite%5D=false'));
+				$(this).find('.icon').addClass('favorited');
+			}
+			else{
+				$(this).find('.js-favorite-link').attr('href', $(this).find('.js-favorite-link').attr('href').replace('favorite%5D=false', 'favorite%5D=true'));
+				$(this).find('.icon').removeClass('favorited');
+			}
 		})
 		.on('ajax:error', '.js-entry', function(e, data){
 		});

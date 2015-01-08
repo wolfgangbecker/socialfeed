@@ -15,16 +15,8 @@ class EntriesController < ApplicationController
   	@entry = EntriesService.update current_user, params
   	respond_to do |format|
   		if @entry.errors.empty?
-  			format.html { 
-  				@entries = EntriesService.current_entries current_user, 10
-    			@entries = EntryDecorator.decorate_collection @entries
-  				render 'index' }
 	      format.json { render json: @entry, status: :ok }
   		else
-  			format.html { 
-  				@entries = EntriesService.current_entries current_user, 10
-    			@entries = EntryDecorator.decorate_collection @entries
-  				render 'index' }
   			format.json { render json: @entry.errors.full_messages, status: :unprocessable_entity }
     	end
   	end
