@@ -2,9 +2,7 @@ class FeedsController < ApplicationController
   respond_to :html
 
   def index
-    @entries = FeedsService.current_entries current_user, 10
-    @entries = EntryDecorator.decorate_collection @entries
-    respond_with @entries
+   @feeds = Feed.all
   end
 
   def show

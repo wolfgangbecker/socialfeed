@@ -143,7 +143,7 @@ p{
       height: 65px;
       width: 100%;
     }
-    .feeds{
+    .entries{
       @include inset-shadow(5px);
       padding: 15px;
       height: 100%;
@@ -151,10 +151,15 @@ p{
       .entry{
         @include border-radius(10px);
         width: 100%;
-        background-color: $secondary;
         padding: 10px;
         margin-bottom: 15px;
         overflow-x: hidden;
+        &.unread{
+          background-color: $secondary;
+        }
+        &.read{
+          background-color: lighten($secondary, 15%);
+        }
         .panel-title .icon{
           text-shadow: -1px 0 $turquoise, 0 1px $turquoise, 1px 0 $turquoise, 0 -1px $turquoise;
           &.favorited{

@@ -1,7 +1,6 @@
-class EntryDecorator < Draper::Decorator
+class CategoryDecorator < Draper::Decorator
   delegate_all
 
-  decorates_association :feed
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -11,7 +10,7 @@ class EntryDecorator < Draper::Decorator
   #     end
   #   end
 
-  def read
-    object.read ? Entry.human_attribute_name(:read) : Entry.human_attribute_name(:unread)
+  def to_s
+  	object.name
   end
 end

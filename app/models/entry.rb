@@ -9,10 +9,11 @@ class Entry < ActiveRecord::Base
     published_at :datetime
     guid         :string
     favorite     :boolean
+    read         :boolean
     timestamps
   end
   
-  attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id
+  attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id, :read, :favorite
 
   #
   # Validations

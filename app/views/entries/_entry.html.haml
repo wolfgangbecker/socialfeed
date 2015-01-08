@@ -1,4 +1,4 @@
-.entry.panel.panel-default
+.entry.panel.panel-default{id: "js-entry-id-#{entry.id}", class: read?(entry)}
   #headingOne.panel-heading{:role => "tab"}
     .panel-title
       %a.collapsed{"aria-controls" => "collapse#{entry.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{entry.id}"}
@@ -6,13 +6,17 @@
           .col-xs-5
             .name.pull-left
               = truncate entry.name, length: 40
-          .col-xs-4
-            .published-at
+          .col-xs-5
+            %span.published-at
               = time_ago_in_words entry.published_at
+            = '/'
+            %span
+              = link_to entry.feed.category, category_path(entry.feed.category)
+            = '/'
+            %span
+              = link_to entry.feed, feed_path(entry.feed)
           .col-xs-2
-            .feed.pull-right
-              = link_to entry.feed_name, feed_path(entry.feed)
-          .col-xs-1
+            = read_link(entry)
             .icon.pull-right{class: entry.favorite ? 'favorited' : 'unfavorited'}
               c
           .col-xs-12
