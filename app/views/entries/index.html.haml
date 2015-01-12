@@ -6,5 +6,4 @@
       = render 'entries_form', q: @q
 .entries.js-entries
   #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
-    - @entries.each do |entry|
-      = render 'entry', entry: entry
+    = render 'entries', entries: @entries

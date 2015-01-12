@@ -20,6 +20,8 @@ class FeedsController < ApplicationController
     @feed = FeedsService.create current_user, params
     respond_to do |format|
       if @feed.errors.empty?
+        @entries = EntriesService.current_entries current_user, 50
+        @entries = EntryDecorator.decorate_collection @entries
         format.js
       else
         format.js{ render 'new', status: :unprocessable_entity }

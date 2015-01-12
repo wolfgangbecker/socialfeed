@@ -43,5 +43,6 @@ class Feed < ActiveRecord::Base
       self.last_modified = feed.last_modified
       Entry.add_entries(feed.entries, self.id)
     end
+    feed
   end
 end

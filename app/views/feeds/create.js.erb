@@ -1,3 +1,8 @@
 $(document).ready(function(){
+  $entries = $("<%= j render 'entries/entries', entries: @entries %>");
   $('#add-feed-modal').modal('hide');
+  $('.js-entries').fadeOut("slow", function() {
+    $('.js-entries').html($entries);
+    $('.js-entries').fadeIn('slow');
+  });
 });
