@@ -18,7 +18,8 @@ class Feed < ActiveRecord::Base
   #
   # Validations
   # 
-
+  validates :url, presence: true, feed_url: true
+  validates :category_id, presence: true
   #
   # Relations
   # 
@@ -41,16 +42,6 @@ class Feed < ActiveRecord::Base
       self.etag = feed.etag
       self.last_modified = feed.last_modified
       Entry.add_entries(feed.entries, self.id)
-    end
-  end
-
-  def self.update_from_feed_continuously(url, delay_interval = 10.minutes)
-    feed = Feedzirra::Feed.fetch_and_parse(url)
-    add_entries(feed.entries)
-    loop do
-      sleep delay_interval
-      feed = Feedzirra::Feed.update(feed)
-      add_entries(feed.new_entries) if feed.updated?
     end
   end
 end

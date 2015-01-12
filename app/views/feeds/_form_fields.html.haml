@@ -1,0 +1,4 @@
+= f.input :url, required: false, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
+= f.association :category, as: :select, required: false, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
+= f.input :name, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
+= f.input :description, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control', rows: 4}

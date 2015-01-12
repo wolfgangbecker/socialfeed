@@ -1,0 +1,19 @@
+= simple_form_for feed, remote: true do |f|
+  .modal-header
+    %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+      %span x
+    %h4.modal-title
+      = t('.add_feed')
+  .modal-body
+    .panel
+      = render 'form_fields', f: f
+      .clearfix
+  .modal-footer.lined-buttons
+    %button.btn.btn-danger{type: "button", data: {dismiss: "modal"}}
+      %span.text
+        = t('.cancel')
+    %button.btn.btn-danger.js-add-feed{type: "button"}
+      %span.text
+        = t('.add')
+
+    &nbsp; &nbsp;

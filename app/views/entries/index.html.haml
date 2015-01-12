@@ -1,6 +1,9 @@
 .dashboard
-  
-  = render 'entries_form', q: @q
+  .row
+    .col-xs-1
+      = render 'feeds/modal_new_feed_form', feed: @feed
+    .col-xs-11
+      = render 'entries_form', q: @q
 .entries.js-entries
   #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
     - @entries.each do |entry|

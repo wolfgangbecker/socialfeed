@@ -2,8 +2,9 @@ class EntriesController < ApplicationController
 	respond_to :html
 
   def index
-    @entries = EntriesService.current_entries current_user, 10
+    @entries = EntriesService.current_entries current_user, 50
     @entries = EntryDecorator.decorate_collection @entries
+    @feed = Feed.new
     respond_with @entries
   end
 

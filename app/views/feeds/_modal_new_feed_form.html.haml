@@ -1,0 +1,9 @@
+/ Button trigger modal
+= link_to new_feed_path, remote: true do
+  .btn.add-feed-btn.icon
+    g
+
+/ Modal
+#add-feed-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content

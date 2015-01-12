@@ -27,6 +27,15 @@
 		})
 		.on('ajax:error', '.js-entry', function(e, data){
 		});
+
+		$('#add-feed-modal').on('click', '.js-add-feed', function(){
+			$(this).closest('form').submit();
+		});
+		$('#add-feed-modal').on('keydown', '.form-control', function(e){
+			if(e.which == 13){
+				$(this).closest('form').submit();
+			}
+		});
 	});
 
 })();

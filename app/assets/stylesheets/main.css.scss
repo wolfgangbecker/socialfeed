@@ -92,7 +92,6 @@ p{
         background-color: $glprimary;
         border: none;
         padding: 7px 12px;
-
       }
       a{
         padding: 15px;
@@ -142,6 +141,20 @@ p{
       background-color: $dprimary;
       height: 65px;
       width: 100%;
+      padding: 15px;
+      .panel{
+        .form-control{
+          width: 80%;
+          float: right;
+        }
+      }
+      .add-feed-btn{
+        color: $gray;
+        background-color: $white;
+        border: none;
+        border-radius: 10px;
+        padding: 3.5px 8px;
+      }
     }
     .entries{
       @include inset-shadow(5px);
