@@ -8,16 +8,22 @@ class Entry < ActiveRecord::Base
     url          :string
     published_at :datetime
     guid         :string
-    favorite     :boolean
-    read         :boolean
+    favorite     :boolean, default: false
+    read         :boolean, default: false
     timestamps
   end
   
+
   attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id, :read, :favorite
 
   #
   # Validations
   # 
+
+  #
+  # Scope
+  # 
+  scope :deletable, -> { where(favorite: false) }
 
   #
   # Relations
