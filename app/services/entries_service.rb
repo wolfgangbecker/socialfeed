@@ -16,6 +16,6 @@ class EntriesService
 
   # Returns the database stored entries of all feeds from the user
   def self.current_entries user, quantity
-    Entry.order('published_at desc').where(feed_id: user.feeds.map(&:id)).first(quantity)
+    Entry.order('published_at desc').first(quantity)
   end
 end
