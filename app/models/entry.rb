@@ -10,6 +10,7 @@ class Entry < ActiveRecord::Base
     guid         :string
     favorite     :boolean, default: false
     read         :boolean, default: false
+    user_id      :integer
     timestamps
   end
   

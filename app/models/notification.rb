@@ -5,6 +5,7 @@ class Notification < ActiveRecord::Base
   #
   fields do
     keywords :string
+    user_id  :integer
     timestamps
   end
 

@@ -7,6 +7,7 @@ class Filter < ActiveRecord::Base
     keywords  :string
     type      :boolean # true => whitelist, false => blacklist
     active    :boolean
+    user_id   :integer
     timestamps
   end
   

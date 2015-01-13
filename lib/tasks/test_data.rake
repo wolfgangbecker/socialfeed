@@ -41,7 +41,7 @@ namespace :demo do
     puts "Creating Feeds"
     Feed.create!(name: 'News', description: 'Politics, Economy and Entertainment', url: 'http://www.theguardian.com/uk/rss', category_id: Category.where(name: 'News').first.id) unless Feed.exists? name: 'News'
     Feed.create!(name: 'Sports', description: 'Football, Volleyball and Basketball', url: 'https://sports.yahoo.com/blogs/rss.xml', category_id: Category.where(name: 'Sports').first.id) unless Feed.exists? name: 'Sports'
-    Feed.create!(name: 'Technology', description: 'Games, Mobile and Web applications news', url: 'http://www.ectnews.com/about/link-to-us.xhtml#rss', category_id: Category.where(name: 'Technology').first.id) unless Feed.exists? name: 'Technology'
+    Feed.create!(name: 'Technology', description: 'Noticias de Internet y Tecnología', url: 'http://www.clarin.com/rss/internet/', category_id: Category.where(name: 'Technology').first.id) unless Feed.exists? name: 'Technology'
   end
 
   task :create_filters => [:environment] do

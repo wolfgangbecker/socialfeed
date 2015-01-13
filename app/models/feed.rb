@@ -10,6 +10,7 @@ class Feed < ActiveRecord::Base
     description   :text
     etag          :string
     last_modified :datetime
+    user_id       :integer
     timestamps
   end
   

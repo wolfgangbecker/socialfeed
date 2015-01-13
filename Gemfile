@@ -32,6 +32,9 @@ gem 'draper'
 # Authentication
 gem 'devise'
 
+# Multi-tenancy
+gem 'acts_as_tenant'
+
 # File Upload
 gem 'carrierwave'
 

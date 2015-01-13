@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150108152420) do
+ActiveRecord::Schema.define(:version => 20150113172738) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(:version => 20150108152420) do
     t.datetime "published_at"
     t.string   "guid"
     t.integer  "feed_id"
-    t.boolean  "favorite"
-    t.boolean  "read"
+    t.boolean  "favorite",     :default => false
+    t.boolean  "read",         :default => false
+    t.integer  "user_id"
   end
 
   add_index "entries", ["feed_id"], :name => "index_entries_on_feed_id"
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20150108152420) do
     t.integer  "category_id"
     t.string   "etag"
     t.datetime "last_modified"
+    t.integer  "user_id"
   end
 
   add_index "feeds", ["category_id"], :name => "index_feeds_on_category_id"
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20150108152420) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "feed_id"
+    t.integer  "user_id"
   end
 
   add_index "filters", ["feed_id"], :name => "index_filters_on_feed_id"
@@ -79,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20150108152420) do
     t.integer  "feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "notifications", ["feed_id"], :name => "index_notifications_on_feed_id"
