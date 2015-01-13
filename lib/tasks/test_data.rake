@@ -24,10 +24,10 @@ namespace :demo do
 
   task :create_users => [:environment] do
     puts "Creating Users"
-    User.create!(name: 'pepe', email: 'pepe@pepe.com', password: 'pepepepe') unless User.exists? email: 'pepe@pepe.com'
-    User.create!(name: 'jose', email: 'jose@jose.com', password: 'josejose') unless User.exists? email: 'jose@jose.com'
-    User.create!(name: 'raul', email: 'raul@raul.com', password: 'raulraul') unless User.exists? email: 'raul@raul.com'
-    User.create!(name: 'manuel', email: 'manuel@manuel.com', password: 'manuelmanuel') unless User.exists? email: 'manuel@manuel.com'
+    User.create!(name: 'Pedro Rodríguez', email: 'pepe@pepe.com', password: 'pepepepe') unless User.exists? email: 'pepe@pepe.com'
+    User.create!(name: 'José Fernández', email: 'jose@jose.com', password: 'josejose') unless User.exists? email: 'jose@jose.com'
+    User.create!(name: 'Daniela Guzmán', email: 'raul@raul.com', password: 'raulraul') unless User.exists? email: 'raul@raul.com'
+    User.create!(name: 'Julio Soroeta', email: 'manuel@manuel.com', password: 'manuelmanuel') unless User.exists? email: 'manuel@manuel.com'
   end
 
   task :create_categories => [:environment] do

@@ -1,6 +1,7 @@
 require 'feedjira'
 
 class Feed < ActiveRecord::Base
+  acts_as_tenant :user
   #
   # schema
   #
