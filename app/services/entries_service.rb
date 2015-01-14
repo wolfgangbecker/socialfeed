@@ -15,7 +15,9 @@ class EntriesService
   end
 
   # Returns the database stored entries of all feeds from the user
-  def self.current_entries user, quantity
-    Entry.order('published_at desc').first(quantity)
+  def self.current_entries user, quantity, search_params = nil
+    search = Entry.ransack(search_params)
+    entries = search.result(distinct: true).order('published_at desc').first(quantity)
+    [entries, search]
   end
 end

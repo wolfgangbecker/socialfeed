@@ -2,10 +2,14 @@ class EntriesController < ApplicationController
 	respond_to :html
 
   def index
-    @entries = EntriesService.current_entries current_user, 50
-    @entries = EntryDecorator.decorate_collection @entries
+    @entries, @entry_search = EntriesService.current_entries current_user, 50, params[:entry_search]
     @feed = Feed.new
-    respond_with @entries
+    unless params[:category].blank?
+      @feeds = Feed.where(category_id: params[:category])
+      @category = Category.find params[:category]
+    else
+      @feeds = Feed.all
+    end
   end
 
   def show

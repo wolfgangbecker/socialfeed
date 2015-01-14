@@ -3,7 +3,11 @@
     .col-xs-1
       = render 'feeds/modal_new_feed_form', feed: @feed
     .col-xs-11
-      = render 'entries_form', q: @q
+      .row
+        %span.js-category-form
+          = render 'category_choice_form', category: @category
+        %span.js-entries-form
+          = render 'entries_form', entry_search: @entry_search, feeds: @feeds
 .entries.js-entries
   #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
     = render 'entries', entries: @entries

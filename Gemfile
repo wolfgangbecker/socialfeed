@@ -44,6 +44,10 @@ gem 'i18n-tasks'
 # Pagination
 gem 'kaminari'
 
+# Searches
+gem 'polyamorous'
+gem 'ransack'
+
 group :development do
 	gem "erb2haml"
   # Errors

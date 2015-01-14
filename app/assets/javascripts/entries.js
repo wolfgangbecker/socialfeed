@@ -31,7 +31,7 @@
 		.on('ajax:error', '.js-entry', function(e, data){
 		});
 
-		// Manage submit button
+		// Manage entry submit button
 		$('#add-feed-modal').on('click', '.js-add-feed', function(){
 			$(this).closest('form').submit();
 		});
@@ -39,6 +39,12 @@
 			if(e.which == 13){
 				$(this).closest('form').submit();
 			}
+		});
+
+		// Search filter
+		// Manage Category select
+		$('.js-category-form').on('change', 'select', function(){
+			$(this).closest('form').submit();
 		});
 	});
 
