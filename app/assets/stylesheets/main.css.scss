@@ -39,7 +39,16 @@ p{
 /* ==========================================================================
    Forms
    ========================================================================== */
-
+form{
+  .input{
+    &.field_with_errors{
+      @include border-radius(15px);
+    }
+    input, select, textarea{
+      @include border-radius(12.5px);
+    }
+  }
+}
 /* ==========================================================================
    Modals
    ========================================================================== */
@@ -70,14 +79,7 @@ p{
       background-color: $primary;
       .input{
         margin-bottom: 22.5px;
-        &.field_with_errors{
-          @include border-radius(15px);
-        }
-        input, select, textarea{
-          @include border-radius(12.5px);
-        }
       }
-
     }
   }
 }
@@ -126,6 +128,9 @@ p{
       margin-bottom: 4px;
       padding: 4px;
       background-color: $gdprimary;
+      &.last{
+        margin-bottom: 0;
+      }
       .sidebar-btn{
         background-color: $glprimary;
         border: none;
@@ -155,7 +160,7 @@ p{
       .follow-panel{
         @include border-radius(5px);
         background-color: $lightblue;
-        height: 20em;
+        height: 19.7em;
         .user{
           @include border-radius(5px);
           margin: 0.5em 3em 0.5em 0.5em;
