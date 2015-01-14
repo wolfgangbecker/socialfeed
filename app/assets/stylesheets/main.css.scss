@@ -70,6 +70,9 @@ p{
       background-color: $primary;
       .input{
         margin-bottom: 22.5px;
+        &.field_with_errors{
+          @include border-radius(15px);
+        }
         input, select, textarea{
           @include border-radius(12.5px);
         }
