@@ -2,6 +2,7 @@ require 'feedjira'
 
 class Feed < ActiveRecord::Base
   acts_as_tenant :user
+  before_validation :set_default_name, if: Proc.new { |feed| feed.name.blank? }
   #
   # schema
   #
@@ -22,6 +23,7 @@ class Feed < ActiveRecord::Base
   # 
   validates :url, presence: true, feed_url: true
   validates :category_id, presence: true
+  validates_uniqueness_to_tenant [:name, :url]
   #
   # Relations
   # 
@@ -47,4 +49,9 @@ class Feed < ActiveRecord::Base
     end
     feed
   end
+
+  protected
+    def set_default_name
+      self.name = Feedjira::Feed.fetch_and_parse(url).title
+    end
 end
