@@ -7,7 +7,7 @@
         %span.js-category-form
           = render 'category_choice_form', category: @category
         %span.js-entries-form
-          = render 'entries_form', entry_search: @entry_search, feeds: @feeds
+          = render 'entries_form', q: @q, feeds: @feeds, category: @category
 .entries.js-entries
   #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
     = render 'entries', entries: @entries

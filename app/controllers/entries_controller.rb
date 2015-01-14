@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
 	respond_to :html
 
   def index
-    @entries, @entry_search = EntriesService.current_entries current_user, 50, params[:entry_search]
+    @entries, @q = EntriesService.current_entries current_user, 50, params[:q]
     @feed = Feed.new
     unless params[:category].blank?
       @feeds = Feed.where(category_id: params[:category])

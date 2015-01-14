@@ -23,6 +23,9 @@ gem 'hobo_fields'
 # Forms
 gem 'simple_form'
 
+# Select boxes
+gem "select2-rails"
+
 # HAML
 gem 'haml-rails'
 
