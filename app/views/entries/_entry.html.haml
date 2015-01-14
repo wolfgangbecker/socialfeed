@@ -5,7 +5,7 @@
         .row
           .col-xs-5
             .name.pull-left
-              = truncate entry.name, length: 40
+              = truncated_name_with_tooltip entry.name, 45
           .col-xs-5
             %span.published-at
               = time_ago_in_words entry.published_at

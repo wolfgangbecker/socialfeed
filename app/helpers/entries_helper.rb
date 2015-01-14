@@ -12,4 +12,12 @@ module EntriesHelper
 	def read? entry
 		'read' if entry.read?
 	end
+
+	def truncated_name_with_tooltip name, length
+		if name.size > length
+			content_tag(:span, truncate(name, length: length), title: name, data: {toggle: "tooltip", placement: "left"})
+		else
+			content_tag(:span, name)
+		end
+	end
 end
