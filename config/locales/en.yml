@@ -229,3 +229,10 @@ en:
       add_feed: Add feed
       cancel: Cancel
       add: Add
+    form_fields:
+      paste_url_here: Paste the URL here
+      give_custom_title: Give this feed a custom title
+      add_description: Add a description
+  entries:
+    entry:
+      view_website: View website

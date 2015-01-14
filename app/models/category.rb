@@ -18,6 +18,11 @@ class Category < ActiveRecord::Base
   # 
 
   #
+  # Scopes
+  # 
+  scope :undefined, -> { where(editable: false) }
+
+  #
   # Relations
   # 
   has_many   :feeds, dependent: :destroy

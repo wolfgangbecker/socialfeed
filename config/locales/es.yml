@@ -220,6 +220,13 @@ es:
       sign_out: Sign out
   feeds:
     feed_form:
-      add_feed: Add feed
-      cancel: Cancel
-      add: Add
+      add_feed: Agregar feed
+      cancel: Cancelar
+      add: Agregar
+    form_fields:
+      paste_url_here: Pegar la URL aquí
+      give_custom_title: Dar un título personalizado a este feed
+      add_description: Agregar una descripción
+  entries:
+    entry:
+      view_website: View website
