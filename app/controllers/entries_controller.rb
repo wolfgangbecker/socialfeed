@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
     @feed = Feed.new
     unless params[:category].blank?
       @feeds = Feed.where(category_id: params[:category])
-      @category = Category.find params[:category]
+      @category = [Category.find(params[:category])].flatten
     else
       @feeds = Feed.all
     end

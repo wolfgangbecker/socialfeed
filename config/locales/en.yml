@@ -210,6 +210,7 @@ en:
     undefined: Undefined
     read: Read
     unread: Unread
+    all: All
   devise:
     registrations:
       new:
@@ -236,3 +237,7 @@ en:
   entries:
     entry:
       view_website: View website
+    entries_form:
+      all: All
+    category_choice_form:
+      all: All
