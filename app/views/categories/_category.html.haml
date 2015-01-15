@@ -1,0 +1,7 @@
+.subpanel
+  .row
+    .col-xs-12.name
+      = category.name
+    - category.feeds.each do |feed|
+      .col-xs-12
+        = feed.name

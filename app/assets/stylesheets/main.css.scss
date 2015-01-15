@@ -63,7 +63,12 @@ p{
       &.field_with_errors{
         @include border-radius(15px);
       }
+      label{
+        vertical-align: top;
+      }
       input, select, textarea{
+        display: inline-block;
+        width: 80%;
         @include border-radius(12.5px);
       }
     }
@@ -180,7 +185,7 @@ p{
       .follow-panel{
         @include border-radius(5px);
         background-color: $lightblue;
-        height: 19.7em;
+        height: 30em;
         .user{
           @include border-radius(5px);
           margin: 0.5em 3em 0.5em 0.5em;
@@ -202,7 +207,7 @@ p{
 
   #content {
     margin-left: -30px;
-    height: 541px;
+    height: 48.8em;
     .dashboard{
       background-color: $dprimary;
       height: 65px;
@@ -226,7 +231,7 @@ p{
     .entries{
       @include inset-shadow(5px);
       padding: 15px;
-      height: 37.3em;
+      height: 43.8em;
       overflow-y: scroll;
       .entry{
         @include box-shadow(4px, 4px, 10px, lighten($gray, 10%));
@@ -251,6 +256,40 @@ p{
           color: inherit;
           background-color: inherit;
           border: none;
+        }
+      }
+    }
+    .secondary-view{
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      .panel{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        @include border-radius(15px);
+        background-color: $secondary;
+        .box{
+          @include border-radius(15px);
+          width: 100%;
+          height: 220px;
+          margin-bottom: 20px;
+          padding: 10px 20px;
+          background-color: $dsecondary;
+          .pre-scrollable{
+            height: 150px;
+            overflow-x: hidden;
+            .subpanel{
+              @include border-radius(5px);
+              min-height: 50px;
+              margin-top: 10px;
+              background-color: $secondary;
+              padding: 15px;
+              .feeds{
+                margin-left: 15px;
+              }
+            }
+          }
         }
       }
     }

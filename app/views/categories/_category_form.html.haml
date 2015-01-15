@@ -1,0 +1,6 @@
+= simple_form_for @category do |f|
+  = f.input :name, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
+  = f.input :description, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control', rows: 3}
+  = f.input :tags, wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
+  %button.btn.icon
+    g
