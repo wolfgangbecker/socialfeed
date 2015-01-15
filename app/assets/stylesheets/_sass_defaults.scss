@@ -67,6 +67,12 @@ $secondary: #f6cf7f; // beish
           border-radius: $radius;
 }
 
+@mixin box-shadow($top, $left, $blur, $color) {
+  -webkit-box-shadow: $top $left $blur $color;
+  -moz-box-shadow: $top $left $blur $color;
+  box-shadow: $top $left $blur $color;
+}
+
 @mixin inset-shadow($length) {
   -moz-box-shadow:    inset 0 0 $length #000000;
   -webkit-box-shadow: inset 0 0 $length #000000;

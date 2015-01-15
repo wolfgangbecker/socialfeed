@@ -216,7 +216,9 @@ p{
       height: 37.3em;
       overflow-y: scroll;
       .entry{
+        @include box-shadow(4px, 4px, 10px, lighten($gray, 10%));
         @include border-radius(10px);
+        border: none;
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
