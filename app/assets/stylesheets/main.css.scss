@@ -41,6 +41,19 @@ p{
    ========================================================================== */
 .main-container{
   form{
+    // TODO: Fix select styles when in dropdown state
+    .form-control.select2-container{
+      @include border-radius(12.5px);
+      .select2-choices, .select2-choice{
+        @include border-radius(12.5px);
+      }
+      .select2-container-active .select2-choice{
+        @include border-radius(12.5px 12.5px 0 0);
+      }
+      .select2-drop-active{
+        @include border-radius(0 0 12.5px 12.5px);
+      }
+    }
     .select2-container:not(.select2-container-active){
       .select2-choices, .select2-results{
         max-height: 10px;
