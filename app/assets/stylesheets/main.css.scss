@@ -39,18 +39,20 @@ p{
 /* ==========================================================================
    Forms
    ========================================================================== */
-form{
-  .select2-container:not(.select2-container-active){
-    .select2-choices, .select2-results{
-      max-height: 10px;
+.main-container{
+  form{
+    .select2-container:not(.select2-container-active){
+      .select2-choices, .select2-results{
+        max-height: 10px;
+      }
     }
-  }
-  .input{
-    &.field_with_errors{
-      @include border-radius(15px);
-    }
-    input, select, textarea{
-      @include border-radius(12.5px);
+    .input{
+      &.field_with_errors{
+        @include border-radius(15px);
+      }
+      input, select, textarea{
+        @include border-radius(12.5px);
+      }
     }
   }
 }
