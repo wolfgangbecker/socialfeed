@@ -1,7 +1,18 @@
 .subpanel
   .row
-    .col-xs-12.name
-      = category.name
-    - category.feeds.each do |feed|
-      .col-xs-12
-        = feed.name
+    .col-xs-1
+      .icon{data: {toggle: "collapse", target: "#category-feeds#{category.id}"}, aria: {expanded: "false", controls: "collapseExample"}}
+        a
+    .col-xs-10
+      %span.title
+        = category.name
+    .col-xs-1
+      .btn.icon.delete-btn
+        e
+    .feeds.collapse{id: "category-feeds#{category.id}"}
+      - category.feeds.each do |feed|
+        .col-xs-1
+          .icon.small
+            e
+        .col-xs-11
+          = feed.name

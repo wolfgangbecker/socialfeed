@@ -13,6 +13,5 @@
         .box
           %h3 
             = t('.list')
-          .pre-scrollable
-            - @categories.each do |category|
-              = render 'category', category: category
+          - @categories.each do |category|
+            = render 'category', category: category
