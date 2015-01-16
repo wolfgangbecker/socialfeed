@@ -13,5 +13,5 @@
         .box
           %h3 
             = t('.list')
-          - @categories.each do |category|
-            = render 'category', category: category
+          .js-categories-list-container
+          = render 'categories_list', categories: @categories

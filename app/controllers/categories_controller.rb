@@ -5,4 +5,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def create
+    @category = CategoriesService.create params
+  end
 end
