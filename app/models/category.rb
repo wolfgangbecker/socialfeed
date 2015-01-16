@@ -16,7 +16,8 @@ class Category < ActiveRecord::Base
   #
   # Validations
   # 
-
+  validates :name, presence: true
+  validates_uniqueness_to_tenant :name
   #
   # Scopes
   # 

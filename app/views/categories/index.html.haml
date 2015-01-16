@@ -2,16 +2,16 @@
   .panel
     .row
       .col-xs-8.col-xs-offset-2
-        %h3
+        %h2
           = t('.categories')
         %p
           = t('.create_a_new_category')
         .box
-          %h4 
+          %h3
             = t('.new')
-            = render 'category_form', category: @category
+          = render 'category_form', category: @category
         .box
-          %h4 
+          %h3 
             = t('.list')
           .pre-scrollable
             - @categories.each do |category|

@@ -204,6 +204,7 @@ es:
     undefined: Undefined
     read: Read
     unread: Unread
+    all: All
   devise:
     registrations:
       new:
@@ -234,3 +235,13 @@ es:
       all: All
     category_choice_form:
       all: All
+  categories:
+    category_form:
+      enter_category_name: Enter category name
+      enter_description: Enter description
+      enter_tags: Enter tags
+    index:
+      categories: Categories
+      create_a_new_category: 'Crear una nueva categoría, ver las existentes con sus feeds asignados or eliminarlas.'
+      new: New
+      list: List
