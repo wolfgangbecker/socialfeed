@@ -11,7 +11,7 @@
       = link_to category_path(category), method: :delete, remote: true do
         .btn.icon.delete-btn
           e
-    .feeds.collapse{id: "category-feeds#{category.id}"}
+    .feeds.row.collapse{id: "category-feeds#{category.id}"}
       - category.feeds.each do |feed|
         .col-xs-1
           = link_to feed_path(feed), method: :delete, remote: true do
