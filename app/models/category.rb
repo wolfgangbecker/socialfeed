@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   acts_as_tenant :user
+  before_destroy :check_if_editable
   #
   # schema
   #
@@ -31,5 +32,8 @@ class Category < ActiveRecord::Base
   #
   # Methods
   # 
-
+  protected
+    def check_if_editable
+      raise I18n.t('errors.can_not_be_destroyed') unless editable
+    end
 end

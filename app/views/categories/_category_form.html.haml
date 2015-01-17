@@ -1,4 +1,4 @@
-= simple_form_for @category do |f|
+= simple_form_for @category, remote: true do |f|
   = f.input :name, required: false, placeholder: t('.enter_category_name'), wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control'}
   = f.input :description, placeholder: t('.enter_description'), wrapper_html: {class: 'form-group description'}, input_html: {class: 'form-control', rows: 3}
   = f.input :tags, placeholder: t('.enter_tags'), wrapper_html: {class: 'form-group tags'}, input_html: {class: 'form-control'}

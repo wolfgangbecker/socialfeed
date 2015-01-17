@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  $categories_list = $("<%= j render 'entries/entries', entries: @entries %>");
-  $categories_container = $('.js-categories-list-container')  ;
+  $categories_list = $("<%= j render 'categories/categories_list', categories: @categories %>");
+  $categories_container = $('.js-categories-list-container');
   $categories_container.fadeOut("slow", function() {
     $categories_container.html($categories_list);
     $categories_container.fadeIn('slow');

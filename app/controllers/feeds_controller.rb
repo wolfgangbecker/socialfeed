@@ -20,11 +20,23 @@ class FeedsController < ApplicationController
     @feed = FeedsService.create current_user, params
     respond_to do |format|
       if @feed.errors.empty?
-        @entries = EntriesService.current_entries current_user, 50
+        @entries, q = EntriesService.current_entries current_user, 50
         @entries = EntryDecorator.decorate_collection @entries
         format.js
       else
         format.js{ render 'new', status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    feed = FeedsService.destroy params
+    respond_to do |format|
+      if feed.errors.empty?
+        @categories = Category.all
+        format.js { render 'categories/refresh_list', status: :ok }
+      else
+        format.js { render 'destroy_error', status: :unprocessable_entity }
       end
     end
   end

@@ -9,9 +9,10 @@
         .box
           %h3
             = t('.new')
-          = render 'category_form', category: @category
+          .js-category-form-container
+            = render 'category_form', category: @category
         .box
           %h3 
             = t('.list')
           .js-categories-list-container
-          = render 'categories_list', categories: @categories
+            = render 'categories_list', categories: @categories

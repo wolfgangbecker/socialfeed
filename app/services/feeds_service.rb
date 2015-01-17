@@ -7,4 +7,8 @@ class FeedsService
     end
     feed
   end
+
+  def self.destroy params
+    Feed.destroy params[:id]
+  end
 end

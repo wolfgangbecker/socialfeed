@@ -137,6 +137,7 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+    can_not_be_destroyed: Can not be destroyed
   helpers:
     select:
       prompt: Please select
@@ -248,6 +249,7 @@ en:
       enter_tags: Enter tags
     index:
       categories: Categories
-      create_a_new_category: 'Create a new category, view existing ones with their assigned feeds ordelete them.'
+      create_a_new_category: Create a new category, view existing ones with their
+        assigned feeds ordelete them.
       new: New
       list: List

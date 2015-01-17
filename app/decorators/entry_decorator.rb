@@ -11,6 +11,10 @@ class EntryDecorator < Draper::Decorator
   #     end
   #   end
 
+  def id
+    object.id
+  end
+
   def read
     object.read ? Entry.human_attribute_name(:read) : Entry.human_attribute_name(:unread)
   end
