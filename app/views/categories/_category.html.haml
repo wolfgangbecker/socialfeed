@@ -5,8 +5,8 @@
         .icon{data: {toggle: "collapse", target: "#category-feeds#{category.id}"}, aria: {expanded: "false", controls: "collapseExample"}}
           a
     .col-xs-10
-      %span.title
-        = category.name
+      %span.title{data: {toggle: "tooltip", placement: "top"}, title: category_title(category)}
+        = link_to category.name, edit_category_path(category), remote: true
     .col-xs-1
       = link_to category_path(category), method: :delete, remote: true do
         .btn.icon.delete-btn

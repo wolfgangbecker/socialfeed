@@ -13,6 +13,26 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def edit
+    @category = Category.find params[:id]
+    respond_to do |format|
+      format.js { render 'refresh_form', status: :ok }
+    end
+  end
+
+  def update
+    @category = CategoriesService.update params
+    respond_to do |format|
+      if @category.errors.empty?
+        @categories = Category.all
+        @category = Category.new
+        format.js { render 'refresh_all', status: :ok }
+      else
+        format.js { render 'new', status: :ok }
+      end
+    end
+  end  
+
   def create
     @category = CategoriesService.create params
     respond_to do |format|

@@ -4,6 +4,10 @@ class CategoriesService
     Category.create params[:category]
   end
 
+  def self.update params
+    Category.update params[:id], params[:category]
+  end
+
   def self.destroy params
     Category.destroy params[:id]
   rescue Exception => e

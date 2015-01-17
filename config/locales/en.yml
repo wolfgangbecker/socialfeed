@@ -253,3 +253,5 @@ en:
         assigned feeds ordelete them.
       new: New
       list: List
+      description: Description
+      tags: Tags
