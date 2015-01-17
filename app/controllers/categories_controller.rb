@@ -5,6 +5,14 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def show
+    @categories = [Category.find(params[:id])]
+    @category = Category.new
+    respond_to do |format|
+      format.html { render 'index', status: :ok }
+    end
+  end
+
   def create
     @category = CategoriesService.create params
     respond_to do |format|
