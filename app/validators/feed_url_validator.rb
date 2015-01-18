@@ -1,13 +1,9 @@
-require 'feed_validator'
+require 'feedjira'
 
 class FeedUrlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    v ||= W3C::FeedValidator.new
-    begin
-      v.validate_url(value)
-    rescue Exception => e
-    end
-    unless v.valid?
+    feed = Feedjira::Feed.fetch_and_parse value
+    if feed.is_a? Fixnum
       record.errors[attribute] << (options[:message] || I18n.t('errors.messages.invalid_feed_url'))
     end
   end

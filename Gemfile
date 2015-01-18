@@ -10,7 +10,6 @@ gem 'sqlite3'
 
 # Feeds
 gem 'feedjira'
-gem 'feedvalidator'
 
 # Background Processing
 gem 'sinatra', require: nil

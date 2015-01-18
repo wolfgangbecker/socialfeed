@@ -53,5 +53,6 @@ class Feed < ActiveRecord::Base
   protected
     def set_default_name
       self.name = Feedjira::Feed.fetch_and_parse(url).title
+    rescue Exception => e
     end
 end
