@@ -138,6 +138,7 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
     can_not_be_destroyed: Can not be destroyed
+    can_not_be_edited: Can not be edited
   helpers:
     select:
       prompt: Please select

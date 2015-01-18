@@ -14,9 +14,14 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find params[:id]
+    @category = CategoriesService.edit params
     respond_to do |format|
-      format.js { render 'refresh_form', status: :ok }
+      if @category.errors.empty?
+        format.js { render 'refresh_form', status: :ok }
+      else
+        @error = @category.errors.full_messages.first
+        format.js { render 'error', status: :ok }
+      end
     end
   end
 
@@ -53,7 +58,8 @@ class CategoriesController < ApplicationController
         @categories = Category.all
         format.js { render 'refresh_list', status: :ok }
       else
-        format.js { render 'destroy_error', status: :unprocessable_entity }
+        @error = category.errors.full_messages.first
+        format.js { render 'error', status: :unprocessable_entity }
       end
     end
   end
