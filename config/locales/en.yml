@@ -239,7 +239,7 @@ en:
   entries:
     entry:
       view_website: View website
-    entries_form:
+    entries_search_form:
       all: All
     category_choice_form:
       all: All
