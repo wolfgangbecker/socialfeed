@@ -242,11 +242,13 @@ es:
       enter_category_name: Enter category name
       enter_description: Enter description
       enter_tags: Enter tags
+      new: Nueva
+      edit: Editar
     index:
-      categories: Categories
-      create_a_new_category: Crear una nueva categoría, ver las existentes con sus
+      categories: Categorías
+      create_a_new_category: Crear o editar categorías, ver las existentes con sus
         feeds asignados or eliminarlas.
-      new: New
-      list: List
-      description: Description
-      tags: Tags
+      new: Nueva
+      list: Lista
+      description: Descripción
+      tags: Etiquetas

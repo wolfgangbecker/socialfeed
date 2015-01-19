@@ -248,10 +248,12 @@ en:
       enter_category_name: Enter category name
       enter_description: Enter description
       enter_tags: Enter tags
+      new: New
+      edit: Edit
     index:
       categories: Categories
-      create_a_new_category: Create a new category, view existing ones with their
-        assigned feeds ordelete them.
+      create_a_new_category: Create or edit categories, view existing ones with their
+        assigned feeds or delete them.
       new: New
       list: List
       description: Description

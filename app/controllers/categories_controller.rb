@@ -13,6 +13,13 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def new
+    @category = Category.new
+    respond_to do |format|
+      format.js { render 'refresh_form', status: :ok }
+    end
+  end
+
   def edit
     @category = CategoriesService.edit params
     respond_to do |format|
