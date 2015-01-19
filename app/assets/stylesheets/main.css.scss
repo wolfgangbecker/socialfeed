@@ -233,6 +233,10 @@ p{
         margin-bottom: 15px;
         overflow-x: hidden;
         background-color: $secondary;
+        .tooltip {
+          z-index: 9999;
+          position: fixed;
+        }
         &.read{
           background-color: lighten($secondary, 10%);
         }

@@ -15,7 +15,7 @@ module EntriesHelper
 
 	def truncated_name_with_tooltip name, length
 		if name.size > length
-			content_tag(:span, truncate(name, length: length), title: name, data: {toggle: "tooltip", placement: "left"})
+			content_tag(:span, truncate(name, length: length), title: name, data: {toggle: "tooltip", placement: "bottom"})
 		else
 			content_tag(:span, name)
 		end
