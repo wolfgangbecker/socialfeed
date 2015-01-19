@@ -11,5 +11,6 @@ $(document).ready(function(){
   $categories_container.fadeOut("slow", function() {
     $categories_container.html($categories_list);
     $categories_container.fadeIn('slow');
+    $('[data-toggle="tooltip"]').tooltip({html: true});
   });
 });

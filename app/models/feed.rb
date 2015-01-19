@@ -23,6 +23,7 @@ class Feed < ActiveRecord::Base
   # 
   validates :url, presence: true, feed_url: true
   validates :category_id, presence: true
+  validates :name, presence: true
   validates_uniqueness_to_tenant [:name, :url]
   #
   # Relations
