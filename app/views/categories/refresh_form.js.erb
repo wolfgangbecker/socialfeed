@@ -1,8 +1,5 @@
 $(document).ready(function(){
+  var category = new Category();
   $category_form = $("<%= j render 'category_form', category: @category %>");
-  $category_form_container = $('.js-category-form-container');
-  $category_form_container.fadeOut("slow", function() {
-    $category_form_container.html($category_form);
-    $category_form_container.fadeIn('slow');
-  });
+  category.refresh_form($category_form);
 });

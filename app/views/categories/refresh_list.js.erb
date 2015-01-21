@@ -1,9 +1,5 @@
 $(document).ready(function(){
+  var category = new Category();
   $categories_list = $("<%= j render 'categories/categories_list', categories: @categories %>");
-  $categories_container = $('.js-categories-list-container');
-  $categories_container.fadeOut("slow", function() {
-    $categories_container.html($categories_list);
-    $categories_container.fadeIn('slow');
-    $('[data-toggle="tooltip"]').tooltip({html: true});
-  });
+  category.refresh_list($categories_list);
 });

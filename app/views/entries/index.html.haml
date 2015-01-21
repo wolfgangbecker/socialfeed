@@ -11,3 +11,6 @@
 .entries.js-entries
   #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
     = render 'entries', entries: @entries
+
+= content_for :bottom_js do
+  = javascript_include_tag "entries/entries"

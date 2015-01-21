@@ -14,3 +14,6 @@
             = t('.list')
           .js-categories-list-container
             = render 'categories_list', categories: @categories
+
+= content_for :bottom_js do
+  = javascript_include_tag "categories/categories"

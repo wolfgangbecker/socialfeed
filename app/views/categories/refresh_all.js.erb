@@ -1,16 +1,8 @@
 $(document).ready(function(){
+  var category = new Category();
   $category_form = $("<%= j render 'category_form', category: @category %>");
-  $category_form_container = $('.js-category-form-container');
-  $category_form_container.fadeOut("slow", function() {
-    $category_form_container.html($category_form);
-    $category_form_container.fadeIn('slow');
-  });
+  category.refresh_form($category_form);
 
   $categories_list = $("<%= j render 'categories/categories_list', categories: @categories %>");
-  $categories_container = $('.js-categories-list-container');
-  $categories_container.fadeOut("slow", function() {
-    $categories_container.html($categories_list);
-    $categories_container.fadeIn('slow');
-    $('[data-toggle="tooltip"]').tooltip({html: true});
-  });
+  category.refresh_list($categories_list);
 });

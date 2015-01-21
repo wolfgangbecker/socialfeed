@@ -1,5 +1,5 @@
 $(document).ready(function(){
+  var feed = new Feed();
   $form = $("<%= j render 'feed_form', feed: @feed %>");
-  $('#add-feed-modal').find('.modal-content').html($form);
-  $('#add-feed-modal').modal('show');
+  feed.refresh_form($form);
 });

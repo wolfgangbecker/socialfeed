@@ -1,17 +1,7 @@
 $(document).ready(function(){
-  // refresh entries search form
+  var entry = new Entry();
   $entries_form = $("<%= j render 'entries/entries_search_form', q: @q, feeds: @feeds, category: nil %>");
-  $('.js-entries-search-form').fadeOut("slow", function() {
-    $('.js-entries-search-form').html($entries_form);
-    $('.js-entries-search-form').fadeIn('slow');
-    $('select').select2();
-  });
-
-  // refresh entries
+  entry.refresh_search_form($entries_form);
   $entries = $("<%= j render 'entries/entries', entries: @entries %>");
-  $('#add-feed-modal').modal('hide');
-  $('.js-entries').fadeOut("slow", function() {
-    $('.js-entries').html($entries);
-    $('.js-entries').fadeIn('slow');
-  });
+  entry.refresh_entries($entries);
 });
