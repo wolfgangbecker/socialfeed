@@ -219,6 +219,7 @@ es:
       filters: Filters
       notifications: Notifications
       following: Following
+      home: Inicio
     header:
       sign_out: Sign out
   feeds:

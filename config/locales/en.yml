@@ -225,6 +225,7 @@ en:
       filters: Filters
       notifications: Notifications
       following: Following
+      home: Home
     header:
       sign_out: Sign out
   feeds:
