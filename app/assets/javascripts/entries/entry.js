@@ -53,6 +53,7 @@
     });
     $(this.ui.add_button).on('keydown', '.form-control', function(e){
       if(e.which == 13){
+        e.stopImmediatePropagation();
         $(this).closest('form').submit();
       }
     });
