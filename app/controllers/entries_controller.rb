@@ -1,5 +1,4 @@
 class EntriesController < ApplicationController
-	respond_to :html
 
   def index
     @entries, @q = EntriesService.current_entries current_user, 50, params[:q]

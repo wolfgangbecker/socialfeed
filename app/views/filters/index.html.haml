@@ -1,0 +1,18 @@
+.secondary-view
+  .panel
+    .row
+      .col-xs-8.col-xs-offset-2
+        %h2
+          = t('.filters')
+        %p
+          = t('.filter_out_certain_entries')
+        .box
+          .js-feed-selection
+            = render 'feed_selection', feeds: @feeds, feed: @feed
+        - if @filter
+          .box
+            .js-filter-form
+              = render 'filter_form', filter: @filter
+
+= content_for :bottom_js do
+  = javascript_include_tag "filters/filters"

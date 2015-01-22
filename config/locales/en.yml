@@ -213,6 +213,7 @@ en:
     read: Read
     unread: Unread
     all: All
+    select_feed: Select feed
   devise:
     registrations:
       new:
@@ -259,3 +260,13 @@ en:
       list: List
       description: Description
       tags: Tags
+  filters:
+    index:
+      filters: Filters
+      filter_out_certain_entries: Filter out certain entries
+    filter_form:
+      enter_keywords: Enter keywords
+      whitelist: Whitelist
+      blacklist: Blacklist
+      apply: Apply
+      delete: Delete

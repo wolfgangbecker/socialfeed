@@ -1,0 +1,8 @@
+= simple_form_for @filter do |f|
+  = f.input :type, as: :radio_buttons, collection: [[t('.whitelist'), true], [t('.blacklist'), false]], required: false, label: false, input_html: {class: 'radio'}
+  = f.input :keywords, placeholder: t('.enter_keywords'), wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control', rows: 3}
+  = f.input :active, as: :boolean, input_html: {class: 'checkbox'}
+  %button.btn
+    = t('.apply')
+  %button.btn
+    = t('.delete')

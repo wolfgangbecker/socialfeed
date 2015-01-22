@@ -9,6 +9,7 @@ Socialfeed::Application.routes.draw do
   resources :feeds
   resources :entries
   resources :categories
+  resources :filters
 
   devise_scope :user do
     authenticated :user do

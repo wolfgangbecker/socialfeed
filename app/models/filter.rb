@@ -5,13 +5,13 @@ class Filter < ActiveRecord::Base
   #
   fields do
     keywords  :string
-    type      :boolean # true => whitelist, false => blacklist
-    active    :boolean
+    type      :boolean, default: false # true => whitelist, false => blacklist
+    active    :boolean, default: true
     user_id   :integer
     timestamps
   end
   
-  attr_accessible :keywords, :type, :active
+  attr_accessible :keywords, :type, :active, :feed_id
 
   #
   # Validations
