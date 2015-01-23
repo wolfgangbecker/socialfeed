@@ -46,19 +46,6 @@
     });
   }
 
-  Entry.prototype.inititate_dashboard = function() {
-    // Manage entry submit button
-    $(this.ui.add_button).on('click', '.js-add-feed', function(){
-      $(this).closest('form').submit();
-    });
-    $(this.ui.add_button).on('keydown', '.form-control', function(e){
-      if(e.which == 13){
-        e.stopImmediatePropagation();
-        $(this).closest('form').submit();
-      }
-    });
-  };
-
   // Manage Category select
   Entry.prototype.initiate_category_select = function() {
     $(this.ui.category_form).on('change', 'select', function(){

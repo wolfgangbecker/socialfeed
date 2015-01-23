@@ -11,7 +11,7 @@
             = render 'feed_selection', feeds: @feeds, feed: @feed
         - if @filter
           .box
-            .js-filter-form
+            .js-filter-form.js-form-container
               = render 'filter_form', filter: @filter
 
 = content_for :bottom_js do

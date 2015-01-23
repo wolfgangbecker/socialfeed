@@ -1,0 +1,7 @@
+$(document).ready(function(){
+  var entry = new Entry();
+  $entries_form = $("<%= j render 'entries/entries_search_form', q: @q, feeds: @feeds, category: nil %>");
+  entry.refresh_search_form($entries_form);
+  $entries = $("<%= j render 'entries/entries', entries: @entries %>");
+  entry.refresh_entries($entries);
+});

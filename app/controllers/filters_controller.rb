@@ -21,6 +21,13 @@ class FiltersController < ApplicationController
   end
 
   def create
-    
+    @filter = FiltersService.create params
+    respond_to do |format|
+      if @filter.errors.empty?
+        format.js
+      else
+        format.js{ render 'new', status: :unprocessable_entity }
+      end
+    end
   end
 end
