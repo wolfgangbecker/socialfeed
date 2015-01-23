@@ -282,6 +282,29 @@ p{
           .description{
             margin-bottom: 65px;
           }
+          .top-margin{
+            margin-top: 13px;
+          }
+          .filter-type, .filter-active{
+            margin-bottom: 5px;
+            float: right;
+            label{
+              font-size: 20px;
+              display: inline-block;
+            }
+            .radio{
+              margin-top: 0;
+              display: inline-block;
+              input{
+                margin-top: 3px;
+              }
+            }
+            input{
+              margin-left: 20px;
+              width: 25px;
+              height: 25px;
+            }
+          }
           .tags{
             display: inline-block;
             margin-bottom: 15px;
