@@ -1,11 +1,12 @@
-= simple_form_for @filter do |f|
+= simple_form_for @filter, remote: true do |f|
   .row
     .col-xs-12
       .pull-right
-        = f.input :type, as: :radio_buttons, collection: [[t('.whitelist'), true], [t('.blacklist'), false]], required: false, label: false, input_html: {class: 'radio'}, wrapper_html: {class: 'filter-type'}
+        = f.input :list_type, as: :radio_buttons, collection: [[t('.whitelist'), true], [t('.blacklist'), false]], required: false, label: false, input_html: {class: 'radio'}, wrapper_html: {class: 'filter-type'}
       .clearfix
       = f.input :keywords, placeholder: t('.enter_keywords'), wrapper_html: {class: 'form-group '}, input_html: {class: 'form-control', rows: 3}
       = f.input :active, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
+      = f.input :feed_id, as: :hidden
       .clearfix
   .row.top-margin
     .col-xs-2.col-xs-offset-8
