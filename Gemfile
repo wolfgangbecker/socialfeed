@@ -50,6 +50,9 @@ gem 'kaminari'
 gem 'polyamorous'
 gem 'ransack'
 
+# Input tags
+gem 'bootstrap-tagsinput-rails'
+
 group :development do
 	gem "erb2haml"
   # Errors

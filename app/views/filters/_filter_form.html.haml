@@ -4,7 +4,8 @@
       .pull-right
         = f.input :list_type, as: :radio_buttons, collection: [[t('.whitelist'), true], [t('.blacklist'), false]], required: false, label: false, input_html: {class: 'radio'}, wrapper_html: {class: 'filter-type'}
       .clearfix
-      = f.input :keywords, placeholder: t('.enter_keywords'), wrapper_html: {class: 'form-group '}, input_html: {class: 'form-control', rows: 3}
+      = f.input :keywords, wrapper_html: {class: 'form-group keywords'}, input_html: {class: 'form-control', rows: 3, data: {role:'tagsinput'}}
+      .clearfix
       = f.input :active, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
       = f.input :feed_id, as: :hidden
       .clearfix
