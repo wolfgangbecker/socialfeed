@@ -9,10 +9,8 @@
         .box
           .js-feed-selection
             = render 'feed_selection', feeds: @feeds, feed: @feed
-        - if @filter
-          .box
-            .js-filter-form.js-form-container
-              = render 'filter_form', filter: @filter
+        .js-filter-form.js-form-container
+          = render 'filter_form', filter: @filter
 
 = content_for :bottom_js do
   = javascript_include_tag "filters/filters"

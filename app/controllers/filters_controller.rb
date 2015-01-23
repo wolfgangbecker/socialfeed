@@ -13,7 +13,16 @@ class FiltersController < ApplicationController
   end
 
   def destroy
-    
+    @filter = FiltersService.destroy params
+    respond_to do |format|
+      if @filter.errors.empty?
+        @feeds = Feed.all
+        @filter = nil
+        format.js { render 'refresh_all', status: :ok }
+      else
+        format.js { render 'error', status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -22,7 +31,7 @@ class FiltersController < ApplicationController
       if @filter.errors.empty?
         format.js
       else
-        format.js{ render 'new', status: :unprocessable_entity }
+        format.js{ render 'error', status: :unprocessable_entity }
       end
     end
   end
@@ -33,7 +42,7 @@ class FiltersController < ApplicationController
       if @filter.errors.empty?
         format.js
       else
-        format.js{ render 'new', status: :unprocessable_entity }
+        format.js{ render 'error', status: :unprocessable_entity }
       end
     end
   end

@@ -18,6 +18,12 @@
         }
       });
     };
+    App.prototype.refresh_content = function($container_selector, $content) { // TODO: Apply this to all views and remove repeated code
+      $container_selector.fadeOut("slow", function() {
+        $container_selector.html($content);
+        $container_selector.fadeIn('slow');
+      });
+    };
   }
   window.App = App;
 })();

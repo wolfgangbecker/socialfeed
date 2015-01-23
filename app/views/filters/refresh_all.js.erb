@@ -1,6 +1,8 @@
 $(document).ready(function(){
   var app = new App();
+  $feed_selection = $("<%= j render 'feed_selection', feeds: @feeds, feed: @feed %>");
+  app.refresh_content($('.js-feed-selection'), $feed_selection);
+
   $filter_form = $("<%= j render 'filter_form', filter: @filter %>");
   app.refresh_content($('.js-filter-form'), $filter_form);
-  alert('filter created successfully');
 });
