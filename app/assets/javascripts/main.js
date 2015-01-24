@@ -6,6 +6,9 @@
     App.prototype.apply_tooltip = function() {
       $('[data-toggle="tooltip"]').tooltip({html: true});
     };
+    App.prototype.apply_tagsinput = function(){
+      $('[data-role="tagsinput"]').tagsinput();
+    };
     App.prototype.initiate_forms = function() {
       // Manage entry submit button
       $('.js-form-container').on('click', '.js-submit', function(){
@@ -18,10 +21,13 @@
         }
       });
     };
-    App.prototype.refresh_content = function($container_selector, $content) { // TODO: Apply this to all views and remove repeated code
+    App.prototype.refresh_content = function($container_selector, $content, callback) { // TODO: Apply this to all views and remove repeated code
       $container_selector.fadeOut("slow", function() {
         $container_selector.html($content);
         $container_selector.fadeIn('slow');
+        if(typeof callback !== 'undefined'){
+          callback();
+        }
       });
     };
   }

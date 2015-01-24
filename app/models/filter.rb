@@ -16,6 +16,8 @@ class Filter < ActiveRecord::Base
   #
   # Validations
   # 
+  validates :user_id, presence: true
+  validates :keywords, presence: true
 
   #
   # Relations

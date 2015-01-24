@@ -10,6 +10,10 @@ class FiltersController < ApplicationController
         @filter = Filter.new feed_id: @feed.id
       end
     end
+    respond_to do |format|
+      format.html
+      format.js { render 'refresh_form', status: :ok }
+    end
   end
 
   def destroy
