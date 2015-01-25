@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
   def index
-    @entries, @q = EntriesService.current_entries current_user, 50, params[:q]
+    @entries, @q = EntriesService.current_entries current_user, 50, params
     @entries = EntryDecorator.decorate_collection @entries
     @feed = Feed.new
     unless params[:category].blank?
