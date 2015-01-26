@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  var app = new App();
+  $selector = $('.entries').find('.entry#id-<%= j "#{@entry.id}" %>');
+  $entry = $("<%= j render 'entry', entry: @entry %>");
+  var read = $entry.hasClass('read');
+  $entry = $entry.children().first();
+  app.refresh_content($selector, $entry, function(){
+    read ? $selector.addClass('read') : $selector.removeClass('read');
+  });
+});

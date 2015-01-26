@@ -16,36 +16,6 @@
     this.ui.search_form = '.js-entries-search-form';
   }
 
-  Entry.prototype.inititate_buttons = function() {  
-    var entry = this;
-    // Manage entry buttons
-    $(entry.ui.entries)
-    .on('ajax:success', entry.ui.entry, function(e, data){
-      // Read/Unread switch
-      if(data.read){
-        $(this).addClass('read');
-        $(this).find(entry.ui.read_link).text('Read');
-        $(this).find(entry.ui.read_link).attr('href', $(this).find(entry.ui.read_link).attr('href').replace('read%5D=true', 'read%5D=false'));
-      }
-      else{
-        $(this).removeClass('read');
-        $(this).find(entry.ui.read_link).text('Unread');
-        $(this).find(entry.ui.read_link).attr('href', $(this).find(entry.ui.read_link).attr('href').replace('read%5D=false', 'read%5D=true'));
-      }
-      // Favorite/Unfavorite
-      if(data.favorite){ 
-        $(this).find(this.ui.favorite_link).attr('href', $(this).find(this.ui.favorite_link).attr('href').replace('favorite%5D=true', 'favorite%5D=false'));
-        $(this).find('.icon').addClass('favorited');
-      }
-      else{
-        $(this).find(this.ui.favorite_link).attr('href', $(this).find(this.ui.favorite_link).attr('href').replace('favorite%5D=false', 'favorite%5D=true'));
-        $(this).find('.icon').removeClass('favorited');
-      }
-    })
-    .on('ajax:error', entry.ui.entry, function(e, data){
-    });
-  }
-
   // Manage Category select
   Entry.prototype.initiate_category_select = function() {
     $(this.ui.category_form).on('change', 'select', function(){

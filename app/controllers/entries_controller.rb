@@ -18,12 +18,9 @@ class EntriesController < ApplicationController
 
   def update
   	@entry = EntriesService.update current_user, params
+    @entry = EntryDecorator.decorate @entry
   	respond_to do |format|
-  		if @entry.errors.empty?
-	      format.json { render json: @entry, status: :ok }
-  		else
-  			format.json { render json: @entry.errors.full_messages, status: :unprocessable_entity }
-    	end
+      format.js
   	end
   end
 end
