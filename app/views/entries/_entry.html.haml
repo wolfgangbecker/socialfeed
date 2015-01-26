@@ -16,8 +16,10 @@
             %span
               = link_to entry.feed, feed_path(entry.feed)
           .col-xs-2
-            = read_link(entry)
-            = favorite_link(entry)
+            %span.js-read-link
+              = read_link(entry)
+            %span.js-favorite-link
+              = favorite_link(entry)
           .col-xs-12
   .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "collapse#{entry.id}"}
     .panel-body.summary

@@ -1,10 +1,15 @@
 $(document).ready(function(){
   var app = new App();
-  $selector = $('.entries').find('.entry#id-<%= j "#{@entry.id}" %>');
-  $entry = $("<%= j render 'entry', entry: @entry %>");
-  var read = $entry.hasClass('read');
-  $entry = $entry.children().first();
-  app.refresh_content($selector, $entry, function(){
-    read ? $selector.addClass('read') : $selector.removeClass('read');
-  });
+  $entry = $('.entry#id-<%= "#{@entry.id}" %>');
+  <% if @read_changed %>
+    $selector = $entry.find('.js-read-link');
+    $link = $('<%= read_link(@entry) %>');
+    app.refresh_content($selector, $link, function(){
+      $entry.toggleClass('read');
+    });
+  <% else %>
+    $selector = $entry.find('.js-favorite-link');
+    $link = $('<%= favorite_link(@entry) %>');
+    app.refresh_content($selector, $link);
+  <% end %>
 });

@@ -18,6 +18,7 @@ class EntriesController < ApplicationController
 
   def update
   	@entry = EntriesService.update current_user, params
+    @read_changed = true unless params[:entry][:read].blank?
     @entry = EntryDecorator.decorate @entry
   	respond_to do |format|
       format.js
