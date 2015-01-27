@@ -1,4 +1,4 @@
 .row
-  = simple_form_for filters_path, method: :get, remote: true do |f|
+  = form_tag filters_path, method: :get, remote: true do |f|
     .col-xs-12
       = select_tag :id, options_from_collection_for_select(feeds, :id, :name, feed._?.id), include_blank: true, class: 'form-control', data: {placeholder: t('placeholders.select_feed')} 
