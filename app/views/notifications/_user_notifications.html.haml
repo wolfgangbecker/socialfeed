@@ -1,0 +1,14 @@
+= simple_form_for edit_user_registration_path(user), method: :put, remote: true do |f|
+  .row
+    .col-xs-12
+      = f.input :notify_new_follower, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
+  .row
+    .col-xs-12
+      = f.input :notify_site_updates, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
+  .row
+    .col-xs-12
+      = f.input :notify_important_topics, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
+  .row
+    .col-xs-2.col-xs-offset-10
+      %button.btn.js-submit
+        = t('.apply')

@@ -2,6 +2,7 @@ class NotificationsController < ApplicationController
 
   def index
     @feeds = Feed.all
+    @user = current_user
     if params[:id]
       @feed = Feed.find params[:id]
       if @feed.notification
