@@ -21,6 +21,11 @@
         }
       });
     };
+    App.prototype.initiate_selection_form = function() {
+      $('.js-selection-form').on('change', 'select', function(){
+        $(this).closest('form').submit();
+      });
+    };
     App.prototype.refresh_content = function($container_selector, $content, callback) { // TODO: Apply this to all views and remove repeated code
       $container_selector.fadeOut("slow", function() {
         $container_selector.html($content);

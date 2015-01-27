@@ -10,6 +10,7 @@ Socialfeed::Application.routes.draw do
   resources :entries
   resources :categories
   resources :filters
+  resources :notifications
 
   devise_scope :user do
     authenticated :user do

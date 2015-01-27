@@ -1,0 +1,19 @@
+.secondary-view
+  .panel
+    .row
+      .col-xs-8.col-xs-offset-2
+        %h2
+          = t('.notifications')
+        %p
+          = t('.choose_keywords_for_each')
+        .box
+          .js-selection-form
+            = render 'feed_selection', feeds: @feeds, feed: @feed
+          .js-notification-form-container
+            = render 'notification_form', notification: @notification
+        .box
+          .js-checklist-container
+            = render 'user_notifications', user: @user
+
+= content_for :bottom_js do
+  = javascript_include_tag "categories/categories"

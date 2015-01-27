@@ -7,7 +7,7 @@
         %p
           = t('.filter_out_certain_entries')
         .box
-          .js-feed-selection
+          .js-selection-form
             = render 'feed_selection', feeds: @feeds, feed: @feed
         .js-filter-form.js-form-container
           = render 'filter_form', filter: @filter

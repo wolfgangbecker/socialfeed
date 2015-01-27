@@ -3,7 +3,7 @@ $(document).ready(function(){
   $filter_form = $("<%= j render 'filter_form', filter: @filter %>");
   app.refresh_content($('.js-filter-form'), $filter_form, function(){
     $feed_selection = $("<%= j render 'feed_selection', feeds: @feeds, feed: @feed %>");
-    app.refresh_content($('.js-feed-selection'), $feed_selection, function(){
+    app.refresh_content($('.js-selection-form'), $feed_selection, function(){
       app.apply_select2();
     });
   });

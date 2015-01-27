@@ -1,6 +1,4 @@
-//= require filters/filter
-
 $(document).ready(function(){
-  var filter = new Filter();
-  filter.initiate_feed_selection();
+  var app = new App();
+  app.initiate_selection_form();
 });
