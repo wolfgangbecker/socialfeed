@@ -4,6 +4,7 @@ class EntryWorker
 
   recurrence { daily.hour_of_day(0).minute_of_hour(1) }
 
+  # daily removal of older entries
   def perform
     feed_ids = Feed.pluck('DISTINCT id')
     feed_ids.each do |feed_id|
@@ -11,5 +12,6 @@ class EntryWorker
 			Entry.where(feed_id: feed_id).deletable.where(['published_at <= ?', cutoff.published_at]).delete_all
 		end
   rescue Exception => e
+    logger.debug "EntryWorker:/n#{e.message}"
   end
 end
