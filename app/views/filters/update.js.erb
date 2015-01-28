@@ -1,3 +1,8 @@
 $(document).ready(function(){
+  var app = new App();
+  $filter_form = $("<%= j render 'filter_form', filter: @filter %>");
+  app.refresh_content($('.js-form-container'), $filter_form, function(){
+    app.apply_tagsinput();
+  });
   alert('filter updated successfully');
 });

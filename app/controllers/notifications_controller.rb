@@ -23,7 +23,7 @@ class NotificationsController < ApplicationController
       if @notification.errors.empty?
         format.js
       else
-        format.js{ render 'error', status: :unprocessable_entity }
+        format.js{ render 'refresh_form', status: :unprocessable_entity }
       end
     end
   end  
@@ -36,7 +36,7 @@ class NotificationsController < ApplicationController
         @notification = nil
         format.js { render 'refresh_all', status: :ok }
       else
-        format.js { render 'error', status: :unprocessable_entity }
+        format.js { render 'refresh_form', status: :unprocessable_entity }
       end
     end
   end
@@ -47,7 +47,7 @@ class NotificationsController < ApplicationController
       if @notification.errors.empty?
         format.js
       else
-        format.js{ render 'error', status: :unprocessable_entity }
+        format.js{ render 'refresh_form', status: :unprocessable_entity }
       end
     end
   end
