@@ -5,11 +5,12 @@ class Notification < ActiveRecord::Base
   #
   fields do
     keywords :string
+    active   :boolean, default: true
     user_id  :integer
     timestamps
   end
 
-  attr_accessible :keywords
+  attr_accessible :keywords, :active, :feed_id
 
   #
   # Validations

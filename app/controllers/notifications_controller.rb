@@ -11,27 +11,44 @@ class NotificationsController < ApplicationController
         @notification = Notification.new feed_id: @feed.id
       end
     end
-    # respond_to do |format|
-    #   format.html
-    #   format.js { render 'refresh_form', status: :ok }
-    # end
+    respond_to do |format|
+      format.html
+      format.js { render 'refresh_form', status: :ok }
+    end
   end
 
-  def show
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def updatetifi
+  def update
+    @notification = NotificationsService.update params
+    respond_to do |format|
+      if @notification.errors.empty?
+        format.js
+      else
+        format.js{ render 'error', status: :unprocessable_entity }
+      end
+    end
   end  
 
-  def create
+  def destroy
+    @notification = NotificationsService.destroy params
+    respond_to do |format|
+      if @notification.errors.empty?
+        @feeds = Feed.all
+        @notification = nil
+        format.js { render 'refresh_all', status: :ok }
+      else
+        format.js { render 'error', status: :unprocessable_entity }
+      end
+    end
   end
 
-  def destroy
+  def create
+    @notification = NotificationsService.create params
+    respond_to do |format|
+      if @notification.errors.empty?
+        format.js
+      else
+        format.js{ render 'error', status: :unprocessable_entity }
+      end
+    end
   end
 end

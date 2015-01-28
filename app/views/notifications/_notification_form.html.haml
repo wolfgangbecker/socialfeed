@@ -1,14 +1,16 @@
 - if notification
-  .box
-    = simple_form_for notification, remote: true do |f|
-      .row
-        .col-xs-10
-          = f.input :keywords, required: false, wrapper_html: {class: 'form-group keywords'}, input_html: {class: 'form-control', rows: 3, data: {role:'tagsinput'}}
-      .row.top-margin
-        .col-xs-2.col-xs-offset-8
-          - if notification.persisted?
-            = link_to notification_path(notification), method: :delete, remote: true, class: 'btn' do
-              = t('.delete')
-        .col-xs-2
-          %button.btn.js-submit
-            = t('.apply')
+  = simple_form_for notification, remote: true, html: {class: 'top-margin bottom-margin'} do |f|
+    .row
+      .col-xs-12
+        = f.input :keywords, required: false, wrapper_html: {class: 'form-group keywords'}, input_html: {class: 'form-control', rows: 3, data: {role:'tagsinput'}}
+      .col-xs-12
+        = f.input :active, as: :boolean, input_html: {class: 'checkbox'}, wrapper_html: {class: 'filter-active'}
+        = f.input :feed_id, as: :hidden
+    .row.top-margin
+      .col-xs-2.col-xs-offset-8
+        - if notification.persisted?
+          = link_to notification_path(notification), method: :delete, remote: true, class: 'btn' do
+            = t('.delete')
+      .col-xs-2
+        %button.btn.js-submit
+          = t('.apply')

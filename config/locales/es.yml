@@ -264,3 +264,12 @@ es:
       blacklist: Blacklist
       apply: Apply
       delete: Delete
+  notifications:
+    notification_form:
+      delete: Delete
+      apply: Apply
+    user_notifications:
+      apply: Apply
+    index:
+      notifications: Notifications
+      choose_keywords_for_each: Choose keywords for each

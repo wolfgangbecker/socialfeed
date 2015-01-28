@@ -1,0 +1,7 @@
+$(document).ready(function(){
+  var app = new App();
+  $notification_form = $("<%= j render 'notification_form', notification: @notification %>");
+  app.refresh_content($('.js-form-container'), $notification_form, function(){
+    app.apply_tagsinput();
+  });
+});

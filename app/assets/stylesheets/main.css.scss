@@ -59,6 +59,12 @@ p, .bootstrap-tagsinput{
         max-height: 10px;
       }
     }
+    &.top-margin{
+      margin-top: 5px;
+    }
+    &.bottom-margin{
+      margin-bottom: 5px;
+    }
     .input{
       margin-bottom: 22.5px;
       &.field_with_errors{
@@ -297,6 +303,20 @@ p, .bootstrap-tagsinput{
               margin-right: 10px;
             }
           }
+          .checkbox-group {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            label {
+              font-size: 18px;
+              font-weight: normal;
+              float: left;
+            }
+            input { 
+              height: 35px;
+              width: 35px;
+              float: right;
+            }
+          }
           .filter-type, .filter-active{
             margin-bottom: 5px;
             float: right;
@@ -313,8 +333,8 @@ p, .bootstrap-tagsinput{
             }
             input{
               margin-left: 20px;
-              width: 25px;
-              height: 25px;
+              width: 35px;
+              height: 35px;
             }
           }
           .tags{
