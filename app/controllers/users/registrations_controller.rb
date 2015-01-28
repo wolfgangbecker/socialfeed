@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def update
-    super
+    User.update current_user.id, params[:user]
     respond_to do |format|
       format.js { render 'notifications/refresh_user_notifications_form', status: :ok}
     end

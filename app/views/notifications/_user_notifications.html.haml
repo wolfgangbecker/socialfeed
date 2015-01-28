@@ -1,6 +1,6 @@
 %h3
   = t('.general_notifications')
-= simple_form_for user, url: edit_user_registration_path, method: :put, remote: true do |f|
+= simple_form_for user, url: url_for(action: 'update', controller: 'users/registrations'), method: :put, remote: true do |f|
   .checkbox-group
     .row
       .col-xs-12
