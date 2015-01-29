@@ -179,6 +179,9 @@ p, .bootstrap-tagsinput{
         &:active{
           background-color: $selectedprimary;
         }
+        &.selected{
+          background-color: $dprimary;
+        }
       }
       li:last-of-type a{
         margin-bottom: 0;

@@ -220,7 +220,7 @@ es:
       filters: Filters
       notifications: Notifications
       following: Following
-      home: Inicio
+      entries: Inicio
     header:
       sign_out: Sign out
   feeds:

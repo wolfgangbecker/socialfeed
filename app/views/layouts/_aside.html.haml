@@ -4,17 +4,13 @@
       .box
         %ul.nav.nav-pills.nav-stacked
           %li
-            = link_to entries_path, class: 'text-center' do
-              = t('.home')
+            = sidebar_link_to 'entries', controller_name
           %li
-            = link_to categories_path, class: 'text-center' do
-              = t('.categories')
+            = sidebar_link_to 'categories', controller_name
           %li
-            = link_to filters_path, class: 'text-center' do
-              = t('.filters')
+            = sidebar_link_to 'filters', controller_name
           %li
-            = link_to notifications_path, class: 'text-center' do
-              = t('.notifications')
+            = sidebar_link_to 'notifications', controller_name
   .row
     .col-xs-12
       .box.last
