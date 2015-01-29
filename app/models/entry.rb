@@ -16,7 +16,7 @@ class Entry < ActiveRecord::Base
   end
   
 
-  attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id, :read, :favorite
+  attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id, :read, :favorite, :user_id
 
   #
   # Validations
@@ -34,7 +34,7 @@ class Entry < ActiveRecord::Base
   #
   # Methods
   # 
-  def self.add_entries entries, feed_id
+  def self.add_entries entries, feed_id, user_id
     entries.each do |entry|
       unless exists? :guid => entry.id
         create!(
@@ -43,7 +43,8 @@ class Entry < ActiveRecord::Base
           url:          entry.url,
           published_at: entry.published,
           guid:         entry.id,
-          feed_id:      feed_id
+          feed_id:      feed_id,
+          user_id:      user_id
         )
       end
     end

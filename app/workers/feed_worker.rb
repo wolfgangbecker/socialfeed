@@ -8,7 +8,7 @@ class FeedWorker
   def perform
     Feed.find_each(batch_size: 100) do |feed|
       begin
-    	 feed.update_entries
+    	  feed.update_entries
       rescue Exception => e
         logger.debug "FeedWorker:/n#{e.message}"
       end

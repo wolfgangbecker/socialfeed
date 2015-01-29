@@ -46,7 +46,7 @@ class Feed < ActiveRecord::Base
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       self.etag = feed.etag
       self.last_modified = feed.last_modified
-      Entry.add_entries(feed.entries, self.id)
+      Entry.add_entries(feed.entries, self.id, user_id)
     end
     feed
   end
