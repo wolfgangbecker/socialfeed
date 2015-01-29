@@ -43,6 +43,7 @@ class Feed < ActiveRecord::Base
   def update_entries
     feed = Feedjira::Feed.fetch_and_parse(url)
     raise 'Feed format issue' if feed.is_a? Numeric
+    apply_filter(feed) if filter._?.active
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       self.etag = feed.etag
       self.last_modified = feed.last_modified
@@ -55,5 +56,19 @@ class Feed < ActiveRecord::Base
     def set_default_name
       self.name = Feedjira::Feed.fetch_and_parse(url).title
     rescue Exception => e
+    end
+    def apply_filter feed
+      keywords = filter.keywords.split(',')
+      entries = []
+      if filter.list_type # whitelisting
+        entries = feed.entries.map do |entry|
+          entry if keywords.any? { |keyword| entry.title.include?(keyword) || entry.summary.include?(keyword) }
+        end
+      else # blacklisting
+        entries = feed.entries.map do |entry|
+          entry unless keywords.any? { |keyword| entry.title.include?(keyword) || entry.summary.include?(keyword) }
+        end
+      end
+      feed.entries = entries
     end
 end
