@@ -239,6 +239,8 @@ es:
       all: All
     category_choice_form:
       all: All
+    index:
+      no_entries_found: No entries found
   categories:
     category_form:
       enter_category_name: Enter category name
@@ -270,6 +272,7 @@ es:
       apply: Apply
     user_notifications:
       apply: Apply
+      general_notifications: General notifications
     index:
       notifications: Notifications
       choose_keywords_for_each: Choose keywords for each

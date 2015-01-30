@@ -259,11 +259,19 @@ p, .bootstrap-tagsinput{
             color: $yellow;
           }
         }
+        .summary{
+          padding-bottom: 7px;
+        }
         .panel-heading, .panel-body{
           color: inherit;
           background-color: inherit;
           border: none;
         }
+      }
+      .error-message{
+        color: $dprimary;
+        margin-top: 40px;
+        font-size: 30px;
       }
     }
     .secondary-view{
@@ -272,11 +280,11 @@ p, .bootstrap-tagsinput{
       padding: 20px;
       .panel{
         @include box-shadow(5px, 5px, 10px, $gray);
+        @include border-radius(15px);
         width: 100%;
         height: 100%;
         padding: 20px;
         overflow: auto;
-        @include border-radius(15px);
         background-color: $dsecondary;
         .box{
           @include border-radius(15px);

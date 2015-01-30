@@ -9,8 +9,14 @@
         %span.js-entries-search-form
           = render 'entries_search_form', q: @q, feeds: @feeds, category: @category
 .entries.js-entries
-  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
-    = render 'entries', entries: @entries
+  - if @entries.empty?
+    -# .alert.alert-info{role: 'alert'}
+    .error-message.text-center
+      .glyphicon.glyphicon-exclamation-sign{aria: {hidden: 'true'}}
+      = t('.no_entries_found')
+  - else
+    #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+      = render 'entries', entries: @entries
 
 = content_for :bottom_js do
   = javascript_include_tag "entries/entries"

@@ -24,4 +24,6 @@
   .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "collapse#{entry.id}"}
     .panel-body.summary
       = raw entry.summary
+      = raw entry.content
+      %br
       = link_to t('.view_website'), entry.url

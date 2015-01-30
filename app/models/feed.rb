@@ -61,12 +61,20 @@ class Feed < ActiveRecord::Base
       keywords = filter.keywords.split(',')
       entries = []
       if filter.list_type # whitelisting
-        entries = feed.entries.map do |entry|
-          entry if keywords.any? { |keyword| entry.title.include?(keyword) || entry.summary.include?(keyword) }
+        entries = feed.entries.select do |entry|
+          keywords.any? do |keyword| 
+            entry.title.include?(keyword) || 
+            entry.summary.include?(keyword) ||
+            entry._?.content._?.include?(keyword)
+          end
         end
       else # blacklisting
-        entries = feed.entries.map do |entry|
-          entry unless keywords.any? { |keyword| entry.title.include?(keyword) || entry.summary.include?(keyword) }
+        entries = feed.entries.select do |entry|
+          !keywords.any? do |keyword| 
+            entry.title.include?(keyword) || 
+            entry.summary.include?(keyword) ||
+            entry._?.content._?.include?(keyword)
+          end
         end
       end
       feed.entries = entries

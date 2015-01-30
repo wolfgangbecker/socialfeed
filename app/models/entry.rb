@@ -6,6 +6,7 @@ class Entry < ActiveRecord::Base
   fields do
     name         :string
     summary      :text
+    content      :text
     url          :string
     published_at :datetime
     guid         :string
@@ -16,7 +17,7 @@ class Entry < ActiveRecord::Base
   end
   
 
-  attr_accessible :name, :summary, :url, :published_at, :guid, :feed_id, :read, :favorite, :user_id
+  attr_accessible :name, :summary, :content, :url, :published_at, :guid, :feed_id, :read, :favorite, :user_id
 
   #
   # Validations
@@ -40,6 +41,7 @@ class Entry < ActiveRecord::Base
         create!(
           name:         entry.title,
           summary:      entry.summary,
+          content:      entry._?.content,
           url:          entry.url,
           published_at: entry.published,
           guid:         entry.id,
