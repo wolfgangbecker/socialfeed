@@ -282,3 +282,7 @@ en:
     index:
       notifications: Notifications
       choose_keywords_for_each: Choose keywords for each
+  notification_mailer:
+    notify_entry:
+      important_topic_mntioned_in_entry: Important topic mntioned in entry
+      case_you_want_to_deactivate_notification: Case you want to deactivate notification

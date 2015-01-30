@@ -45,6 +45,9 @@ class Feed < ActiveRecord::Base
     raise 'Feed format issue' if feed.is_a? Numeric
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       apply_filter!(feed) if filter._?.active
+      if User.find(user_id).notify_important_topics && notification._?.active
+        apply_notifications(feed)
+      end
       self.etag = feed.etag
       self.last_modified = feed.last_modified
       Entry.add_entries(feed.entries, self.id, user_id)
@@ -57,26 +60,36 @@ class Feed < ActiveRecord::Base
       self.name = Feedjira::Feed.fetch_and_parse(url).title
     rescue Exception => e
     end
+    
+    # filter out entries
     def apply_filter! feed
       keywords = filter.keywords.split(',')
-      entries = []
-      if filter.list_type # whitelisting
-        entries = feed.entries.select do |entry|
-          keywords.any? do |keyword| 
-            entry.title.include?(keyword) || 
-            entry.summary.include?(keyword) ||
-            entry._?.content._?.include?(keyword)
-          end
-        end
-      else # blacklisting
-        entries = feed.entries.select do |entry|
-          !keywords.any? do |keyword| 
-            entry.title.include?(keyword) || 
-            entry.summary.include?(keyword) ||
-            entry._?.content._?.include?(keyword)
-          end
+      entries = feed.entries.select do |entry|
+        if filter.list_type # whitelisting
+          entry_contains_any_keyword?(entry, keywords)
+        else # blacklisting
+          !entry_contains_any_keyword?(entry, keywords)
         end
       end
       feed.entries = entries
+    end
+
+    # run email notifications
+    def apply_notifications feed
+      keywords = notification.keywords.split(',')
+      feed.entries.each do |entry|
+        if !Entry.exists?(guid: entry.id) && entry_contains_any_keyword?(entry, keywords)
+          NotificationMailer.notify_entry(user, entry).deliver_now
+        end
+      end
+    end
+
+    # check if the entry contains any of the keywords
+    def entry_contains_any_keyword? entry, keywords
+      keywords.any? do |keyword| 
+        entry.title.include?(keyword) || 
+        entry.summary.include?(keyword) ||
+        entry._?.content._?.include?(keyword)
+      end
     end
 end

@@ -1,0 +1,9 @@
+= image_tag "brand.svg", class: 'img-responsive'
+%h1
+  = t('.important_topic_mntioned_in_entry')
+
+#content
+  .entries
+    = render 'entries/entry', entry: @entry
+
+= link_to t('.case_you_want_to_deactivate_notification'), notifications_url(id: @entry.feed.id), target: '_blank'
