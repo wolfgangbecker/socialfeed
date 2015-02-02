@@ -6,11 +6,20 @@ class FeedWorker
 
   # update all feed's entries
   def perform
-    Feed.find_each(batch_size: 100) do |feed|
-      begin
-    	  feed.update_entries
-      rescue Exception => e
-        logger.debug "FeedWorker:/n#{e.message}"
+    User.find_each(batch_size: 10) do |user|
+      notifications = []
+      user.feeds.each do |feed|
+        begin
+          entries = feed.update_entries
+          unless entries.empty?
+      	    notifications << {feed: feed, entries: entries}
+          end
+        rescue Exception => e
+          logger.debug "FeedWorker:/n#{e.message}"
+        end
+      end
+      unless notifications.empty?
+        NotificationMailer.notify_entries(user, notifications).deliver
       end
     end
   end

@@ -43,17 +43,18 @@ class Feed < ActiveRecord::Base
   def update_entries
     feed = Feedjira::Feed.fetch_and_parse(url)
     raise 'Feed format issue' if feed.is_a? Numeric
+    notification_entries = []
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       apply_filter!(feed) if filter._?.active
       user = User.find(user_id)
       if user.notify_important_topics && notification._?.active
-        apply_notifications(feed, user)
+        notification_entries = apply_notifications(feed, user)
       end
       self.etag = feed.etag
       self.last_modified = feed.last_modified
       Entry.add_entries(feed.entries, self.id, user_id)
     end
-    feed
+    notification_entries
   end
 
   protected
@@ -78,11 +79,13 @@ class Feed < ActiveRecord::Base
     # run email notifications
     def apply_notifications feed, user
       keywords = notification.keywords.split(',')
+      notification_entries = []
       feed.entries.each do |entry|
         if !Entry.exists?(guid: entry.id) && entry_contains_any_keyword?(entry, keywords)
-          NotificationMailer.notify_entry(user, entry).deliver_now
+          notification_entries << entry
         end
       end
+      notification_entries
     end
 
     # check if the entry contains any of the keywords
