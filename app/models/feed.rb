@@ -47,7 +47,7 @@ class Feed < ActiveRecord::Base
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       apply_filter!(feed) if filter._?.active
       user = User.find(user_id)
-      if user.notify_important_topics && notification._?.active
+      if notification._?.active
         notification_entries = apply_notifications(feed, user)
       end
       self.etag = feed.etag

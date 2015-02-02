@@ -11,7 +11,7 @@ class FeedWorker
       user.feeds.each do |feed|
         begin
           entries = feed.update_entries
-          unless entries.empty?
+          unless !user.notify_important_topics || entries.empty?
       	    notifications << {feed: feed, entries: entries}
           end
         rescue Exception => e
