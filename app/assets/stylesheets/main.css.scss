@@ -18,6 +18,12 @@ h1{
   font-size: 42px;
 }
 
+.tooltip {
+  z-index: 9999;
+  position: fixed;
+  word-wrap: break-word;
+}
+
 p, .bootstrap-tagsinput{
   font-size: 16px;
 }
@@ -213,7 +219,6 @@ p, .bootstrap-tagsinput{
       }
     }
   }
-
   #content {
     margin-left: -30px;
     height: 48.8em;
@@ -245,10 +250,6 @@ p, .bootstrap-tagsinput{
         margin-bottom: 15px;
         overflow-x: hidden;
         background-color: $secondary;
-        .tooltip {
-          z-index: 9999;
-          position: fixed;
-        }
         &.read{
           background-color: lighten($secondary, 10%);
         }

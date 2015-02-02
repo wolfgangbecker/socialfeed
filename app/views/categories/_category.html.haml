@@ -22,4 +22,5 @@
           .icon.small
             e
       .col-xs-11
-        = feed.name
+        %span{data: {toggle: "tooltip", placement: "right"}, title: feed.url}
+          = feed.name
