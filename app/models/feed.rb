@@ -45,8 +45,9 @@ class Feed < ActiveRecord::Base
     raise 'Feed format issue' if feed.is_a? Numeric
     unless self.etag == feed.etag && self.last_modified == feed.last_modified
       apply_filter!(feed) if filter._?.active
-      if User.find(user_id).notify_important_topics && notification._?.active
-        apply_notifications(feed)
+      user = User.find(user_id)
+      if user.notify_important_topics && notification._?.active
+        apply_notifications(feed, user)
       end
       self.etag = feed.etag
       self.last_modified = feed.last_modified
@@ -75,7 +76,7 @@ class Feed < ActiveRecord::Base
     end
 
     # run email notifications
-    def apply_notifications feed
+    def apply_notifications feed, user
       keywords = notification.keywords.split(',')
       feed.entries.each do |entry|
         if !Entry.exists?(guid: entry.id) && entry_contains_any_keyword?(entry, keywords)

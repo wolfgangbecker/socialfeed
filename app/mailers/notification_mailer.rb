@@ -4,7 +4,7 @@ class NotificationMailer < ActionMailer::Base
 
   def notify_entry user, entry
     @user = user
-    @entry = entry
+    @entry = EntryDecorator.decorate(entry)
     mail(to: @user.email, subject: 'Important Topic Notification')
   end
 end
