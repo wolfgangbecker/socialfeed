@@ -288,3 +288,54 @@ en:
       deactivate_notifications: Deactivate this notification
       feed: 'Feed: %{feed}'
       view_website: View website
+      published_on: Published on
+    notify_entry:
+      important_topic_mntioned_in_entry: Important topic mntioned in entry
+  activerecord:
+    models:
+      category:
+        one: Category
+        other: Categories
+      entry:
+        one: Entry
+        other: Entries
+      feed:
+        one: Feed
+        other: Feeds
+      filter:
+        one: Filter
+        other: Filters
+      notification:
+        one: Notification
+        other: Notifications
+      user:
+        one: User
+        other: Users
+    attributes:
+      category:
+        name: Name
+        tags: Tags
+        description: Description
+      entry: 
+        name: Name
+        summary: Summary
+        content: Content
+        url: URL
+        published_at: Published at
+      feed: 
+        name: Name
+        url: URL
+        description: Description
+      filter:
+        active: Active
+        keywords: Keywords
+        list_type: List Type
+      notification:
+        keywords: Keywords
+        active: Active
+      user:
+        email: Email
+        name: Name
+        notify_new_follower: Notify new follower
+        notify_site_updates: Notify site updates
+        notify_important_topics: Notify important topics

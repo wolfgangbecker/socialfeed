@@ -1,5 +1,53 @@
 ---
 es:
+  activerecord:
+    models:
+      filter:
+        one: Filtro
+        other: Filtros
+      notification:
+        one: Notificación
+        other: Notificaciones
+      user:
+        one: Usuario
+        other: Usuarios
+      category:
+        one: Categoría
+        other: Categorías
+      entry:
+        one: Entrada
+        other: Entradas
+      feed:
+        one: Feed
+        other: Feeds
+    attributes:
+      filter:
+        keywords: Palabras clave
+        list_type: Tipo de lista
+        active: Activo
+      notification:
+        keywords: Palabras clave
+        active: Activo
+      user:
+        email: Email
+        name: Nombre
+        notify_new_follower: Notificar nuevo seguidor
+        notify_site_updates: Notificar cambios del sitio
+        notify_important_topics: Notificar temas importantes
+      category:
+        name: Nombre
+        tags: Etiquetas
+        description: Descripción
+      entry:
+        name: Nombre
+        summary: Resumen
+        content: Contenido
+        url: URL
+        published_at: Publicado el
+      feed:
+        name: Nombre
+        url: URL
+        description: Descripción
   date:
     abbr_day_names:
     - dom
@@ -268,11 +316,11 @@ es:
       delete: Delete
   notifications:
     notification_form:
-      delete: Delete
-      apply: Apply
+      delete: Borrar
+      apply: Aplicar
     user_notifications:
-      apply: Apply
-      general_notifications: General notifications
+      apply: Aplicar
+      general_notifications: Notificaciones Generales
     index:
       notifications: Notifications
       choose_keywords_for_each: Choose keywords for each
@@ -282,3 +330,6 @@ es:
       deactivate_notifications: Desactivar esta notificación
       feed: 'Feed: %{feed}'
       view_website: View website
+      published_on: Published on
+    notify_entry:
+      important_topic_mntioned_in_entry: Important topic mntioned in entry
