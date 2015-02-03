@@ -48,7 +48,7 @@ class Feed < ActiveRecord::Base
       apply_filter!(feed) if filter._?.active
       user = User.find(user_id)
       if notification._?.active
-        notification_entries = apply_notifications(feed, user)
+        notification_entries = search_notification_entries(feed, user)
       end
       self.etag = feed.etag
       self.last_modified = feed.last_modified
@@ -77,7 +77,7 @@ class Feed < ActiveRecord::Base
     end
 
     # run email notifications
-    def apply_notifications feed, user
+    def search_notification_entries feed, user
       keywords = notification.keywords.split(',')
       notification_entries = []
       feed.entries.each do |entry|

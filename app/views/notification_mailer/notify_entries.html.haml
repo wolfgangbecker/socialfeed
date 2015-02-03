@@ -10,8 +10,11 @@
     - notification[:entries].each do |entry|
       %h5
         = raw entry.title 
-      = raw entry.summary 
-      = raw entry.content
+      = entry.summary 
+      = entry.content
+      %br
+      = t('.published_on')
+      = time_tag entry.published
       %br
       = link_to t('.view_website'), entry.url, target: '_blank'
     %hr
