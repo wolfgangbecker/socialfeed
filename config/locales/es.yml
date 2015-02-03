@@ -44,6 +44,8 @@ es:
         content: Contenido
         url: URL
         published_at: Publicado el
+        read: Leída
+        unread: No leída
       feed:
         name: Nombre
         url: URL
@@ -250,27 +252,33 @@ es:
     pm: pm
   hello: Hello world
   placeholders:
-    untitled: Untitled
-    undefined: Undefined
-    read: Read
-    unread: Unread
-    all: All
-    select_feed: Select feed
+    untitled: Sin título
+    undefined: Indefinido
+    read: Leído
+    unread: No Leído
+    all: Todos
+    select_feed: Seleccione un feed
   devise:
     registrations:
       new:
-        back: Back
+        back: Atrás
   layouts:
     aside:
-      all: All
-      saved: Saved
-      categories: Categories
-      filters: Filters
-      notifications: Notifications
-      following: Following
+      all: Todos
+      saved: Guardado
+      categories: Categorías
+      filters: Filtros
+      notifications: Notificaciones
+      following: Siguiendo a
       entries: Inicio
     header:
-      sign_out: Sign out
+      sign_out: Desconectar
+      simple_feed_aggregator_with: Agregador de feeds simple con funcionalidades sociales
+      preferences: Preferencias
+    footer:
+      contact: Contacto
+      about: Información
+      guide: Guía
   feeds:
     feed_form:
       add_feed: Agregar feed
@@ -282,18 +290,22 @@ es:
       add_description: Agregar una descripción
   entries:
     entry:
-      view_website: View website
+      view_website: Ver en sitio web
     entries_search_form:
-      all: All
+      all: Todas
+      read: Leídas
+      unread: No Leídas
+      favorite: Favoritas
+      not_favorite: No favoritas
     category_choice_form:
-      all: All
+      all: Todas
     index:
-      no_entries_found: No entries found
+      no_entries_found: No se encontraron entradas
   categories:
     category_form:
-      enter_category_name: Enter category name
-      enter_description: Enter description
-      enter_tags: Enter tags
+      enter_category_name: Ingrese el nombre de la categoría
+      enter_description: Ingrese una descripción
+      enter_tags: Ingrese etiquetas
       new: Nueva
       edit: Editar
     index:
@@ -306,14 +318,14 @@ es:
       tags: Etiquetas
   filters:
     index:
-      filters: Filters
-      filter_out_certain_entries: Filter out certain entries
+      filters: Filtros
+      filter_out_certain_entries: Filtrar ciertas entradas
     filter_form:
-      enter_keywords: Enter keywords
-      whitelist: Whitelist
-      blacklist: Blacklist
-      apply: Apply
-      delete: Delete
+      enter_keywords: Ingrese palabras clave
+      whitelist: Lista Blanca
+      blacklist: Lista Negra
+      apply: Aplicar
+      delete: Borrar
   notifications:
     notification_form:
       delete: Borrar
@@ -322,14 +334,14 @@ es:
       apply: Aplicar
       general_notifications: Notificaciones Generales
     index:
-      notifications: Notifications
-      choose_keywords_for_each: Choose keywords for each
+      notifications: Notificaciones
+      choose_keywords_for_each: Elija palabras clave para cada una
   notification_mailer:
     notify_entries:
-      important_topic_mentioned_in_entry: Important topic mentioned in entry
+      important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
       deactivate_notifications: Desactivar esta notificación
       feed: 'Feed: %{feed}'
-      view_website: View website
-      published_on: Published on
+      view_website: Ver en sitio web
+      published_on: Publicado el
     notify_entry:
-      important_topic_mntioned_in_entry: Important topic mntioned in entry
+      important_topic_mntioned_in_entry: Temas importantes mencionados en las entradas

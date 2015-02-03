@@ -229,6 +229,12 @@ en:
       entries: Home
     header:
       sign_out: Sign out
+      simple_feed_aggregator_with: Simple feed-aggregator with social functionality
+      preferences: Preferences
+    footer:
+      contact: Contact
+      about: About
+      guide: Guide
   feeds:
     feed_form:
       add_feed: Add feed
@@ -243,6 +249,10 @@ en:
       view_website: View website
     entries_search_form:
       all: All
+      read: Read
+      unread: Unread
+      favorite: Favorite
+      not_favorite: Not favorite
     category_choice_form:
       all: All
     index:
@@ -316,13 +326,15 @@ en:
         name: Name
         tags: Tags
         description: Description
-      entry: 
+      entry:
         name: Name
         summary: Summary
         content: Content
         url: URL
         published_at: Published at
-      feed: 
+        read: Leída
+        unread: No leída
+      feed:
         name: Name
         url: URL
         description: Description

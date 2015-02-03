@@ -2,9 +2,9 @@
   .col-xs-3
     = f.input :feed_id_in, collection: feeds, required: false, include_blank: false, placeholder: t('placeholders.all'), label: false, input_html: {class: 'form-control', multiple: true}
   .col-xs-2
-    = f.input :read_eq, collection: [['read', true],['unread', false]], include_blank: t('placeholders.all'), required: false, label: false, input_html: {class: 'form-control'}
+    = f.input :read_eq, collection: [[t('.read'), true],[t('.unread'), false]], include_blank: t('placeholders.all'), required: false, label: false, input_html: {class: 'form-control'}
   .col-xs-2
-    = f.input :favorite_eq, collection: [['favorite', true],['not favorite', false]], include_blank: t('placeholders.all'), required: false, label: false, input_html: {class: 'form-control'}
+    = f.input :favorite_eq, collection: [[t('.favorite'), true],[t('.not_favorite'), false]], include_blank: t('placeholders.all'), required: false, label: false, input_html: {class: 'form-control'}
   .col-xs-1
     = hidden_field_tag :category, category._?.map(&:id)
     %button.btn.icon

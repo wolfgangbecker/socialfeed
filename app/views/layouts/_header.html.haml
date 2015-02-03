@@ -10,7 +10,7 @@
             .col-xs-6.col-xs-offset-4
               = image_tag "brand.svg", class: 'img-responsive'
               %p.text-center
-                Simple feed-aggregator with social functionality
+                = t('.simple_feed_aggregator_with')
         .col-xs-3.dropdown
           .btn.pull-right.dropdown-toggle#user-dropdown{data: {toggle: "dropdown"}}
             %span
@@ -20,6 +20,6 @@
           %ul.dropdown-menu.dropdown-menu-right{aria: {labelledby: "user-dropdown"}}
             %li
               %a{href: "#"}
-                Preferences
+                = t('.preferences')
             %li
               = link_to t('.sign_out'), destroy_user_session_path, method: :delete
