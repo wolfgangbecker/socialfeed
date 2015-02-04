@@ -1,7 +1,7 @@
 class FollowingsService
   # Fetches and parses entries from all feeds of the user and returns them
   def self.search_users user, quantity, search_params
-    search = User.ransack(search_params[:q])
+    search = User.except(user).ransack(search_params[:q])
     entries = search.result(distinct: true).order('email desc').first(quantity)
     [entries, search]
   end

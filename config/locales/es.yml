@@ -345,3 +345,15 @@ es:
       published_on: Publicado el
     notify_entry:
       important_topic_mntioned_in_entry: Temas importantes mencionados en las entradas
+  followings:
+    search_form:
+      search_by_name: Buscar por nombre
+      search_by_email: Buscar por email
+      search: Buscar
+    index:
+      follow_user: Seguir usuario
+      by_following_a_user: Al seguir un usuario
+      search: Buscar
+      results: Resultados
+    user_search_results:
+      no_users_found: No se encontraron usuarios

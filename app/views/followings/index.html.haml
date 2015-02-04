@@ -7,6 +7,8 @@
         %p
           = t('.by_following_a_user')
         .box
+          %h3
+            = t('.search')
           .js-search-form-container
             = render 'search_form', q: @q
         .box

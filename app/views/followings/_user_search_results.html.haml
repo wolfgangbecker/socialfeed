@@ -1,0 +1,18 @@
+.table-container
+  - if users.empty?
+    .error-message.text-center
+      .glyphicon.glyphicon-exclamation-sign{aria: {hidden: 'true'}}
+      = t('.no_users_found')
+  - else
+    %table.table
+      - users.each do |user|
+        %tr
+          %td
+            = user.name
+          %td
+            = user.email
+          %td
+            = link_to followings_path(user), method: :post do
+              .btn.icon
+                g
+    

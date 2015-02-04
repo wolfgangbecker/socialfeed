@@ -42,6 +42,37 @@ p, .bootstrap-tagsinput{
   margin-top: 4em;
 }
 
+.padding-bottom-1{
+  padding-bottom: 0.7em;
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+.table-container{
+  overflow-y: auto;
+  max-height: 220px;
+  table.table{
+    background-color: #caaa68;
+    tr td{
+      padding-top: 10px;
+      padding-bottom: 6px;
+      font-size: 16px;
+      border: 1px solid;
+      border-color: $secondary;
+      &:last-of-type{
+        width: 10px;
+      }
+    }
+    .icon{
+      font-size: 12px;
+      height: 24px;
+      width: 24px;
+      padding: 3px;
+    }
+  }
+}
+
 /* ==========================================================================
    Forms
    ========================================================================== */

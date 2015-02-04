@@ -45,6 +45,12 @@ class User < ActiveRecord::Base
 
   has_many :categories, dependent: :destroy
   has_many :feeds, through: :categories
+  
+  #
+  # Scopes
+  # 
+  scope :except, ->(user) { where('id != ?', user) }
+
   #
   # Methods
   # 

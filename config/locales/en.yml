@@ -351,3 +351,15 @@ en:
         notify_new_follower: Notify new follower
         notify_site_updates: Notify site updates
         notify_important_topics: Notify important topics
+  followings:
+    search_form:
+      search_by_name: Search by name
+      search_by_email: Search by email
+      search: Search
+    index:
+      follow_user: Follow user
+      by_following_a_user: By following a user
+      search: Search
+      results: Results
+    user_search_results:
+      no_users_found: No users found

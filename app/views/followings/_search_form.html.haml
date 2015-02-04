@@ -1,0 +1,11 @@
+= search_form_for q, url: followings_path, builder: SimpleForm::FormBuilder, html: {novalidate: true} do |f|
+  .row
+    .col-xs-12
+      = f.input :name_cont, required: false, label: User.human_attribute_name(:name), placeholder: t('.search_by_name'), input_html: {class: 'form-control'}, wrapper_html: {class: 'form-group'}
+  .row
+    .col-xs-12
+      = f.input :email_cont, required: false, label: User.human_attribute_name(:email), placeholder: t('.search_by_email'), input_html: {class: 'form-control'}
+  .row.padding-bottom-1
+    .col-xs-3.col-xs-offset-9
+      %button.btn
+        = t('.search')
