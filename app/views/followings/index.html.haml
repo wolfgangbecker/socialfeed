@@ -1,0 +1,19 @@
+.secondary-view
+  .panel
+    .row
+      .col-xs-8.col-xs-offset-2
+        %h2
+          = t('.follow_user')
+        %p
+          = t('.by_following_a_user')
+        .box
+          .js-search-form-container
+            = render 'search_form', q: @q
+        .box
+          %h3 
+            = t('.results')
+          .js-results-container
+            = render 'user_search_results', users: @users
+
+= content_for :bottom_js do
+  = javascript_include_tag "followings/followings"

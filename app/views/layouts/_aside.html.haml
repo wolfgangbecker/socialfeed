@@ -17,8 +17,9 @@
         .title.text-center
           %span
             = t('.following')
-          .btn.sidebar-btn.icon
-            g
+            = sidebar_link_to 'followings', controller_name do
+              .btn.icon
+                g
         .follow-panel.pre-scrollable
           // repeat for every user {
           .row.user

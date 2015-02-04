@@ -169,11 +169,17 @@ p, .bootstrap-tagsinput{
         margin-bottom: 0;
       }
       .sidebar-btn{
-        background-color: $glprimary;
-        border: none;
-        padding: 7px 12px;
+        .btn{
+          background-color: $glprimary;
+          border: none;
+          padding: 7px 12px;
+        }
+        &.selected .btn{
+          background-color: $dprimary;
+          color: darken($icongray, 10%);
+        }
       }
-      a{
+      li a{
         padding: 15px;
         font-size: $fs-h4;
         color: $black;
@@ -191,6 +197,17 @@ p, .bootstrap-tagsinput{
       }
       li:last-of-type a{
         margin-bottom: 0;
+      }
+      .sidebar-btn{
+        &:hover{
+          background-color: lighten($glprimary, 5%);
+        }
+        &:active{
+          background-color: $selectedprimary;
+        }
+        &.selected{
+          background-color: $dprimary;
+        }
       }
       .title{
         margin: 10px 0;

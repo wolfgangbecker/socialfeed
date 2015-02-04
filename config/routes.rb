@@ -11,6 +11,7 @@ Socialfeed::Application.routes.draw do
   resources :categories
   resources :filters
   resources :notifications
+  resources :followings, only: [:index, :create, :destroy]
 
   devise_scope :user do
     authenticated :user do
