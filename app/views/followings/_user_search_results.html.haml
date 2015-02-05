@@ -12,7 +12,7 @@
           %td
             = user.email
           %td
-            = link_to followings_path(user), method: :post do
+            = link_to followings_path(followed_id: user.id), method: :post, remote: true do
               .btn.icon
                 g
     

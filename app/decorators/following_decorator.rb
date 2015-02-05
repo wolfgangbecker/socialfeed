@@ -10,4 +10,7 @@ class FollowingDecorator < Draper::Decorator
   #     end
   #   end
 
+  def followed
+    object.followed.name
+  end
 end

@@ -6,11 +6,11 @@ class FollowingsService
     [entries, search]
   end
 
-  def self.create user, params
-    Following.update params[:id], params[:following]
+  def self.build user, params
+    user.followings.build(followed_id: params[:followed_id])
   end
 
-  def self.destroy user, following
-    
+  def self.destroy params
+    Following.destroy params[:id]
   end
 end

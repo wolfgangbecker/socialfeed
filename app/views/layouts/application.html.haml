@@ -20,7 +20,7 @@
         = render 'layouts/header'
         .row
           .col-xs-3
-            = render 'layouts/aside'
+            = render 'layouts/aside', followings: @followings
           .col-xs-9
             #content
               = yield
