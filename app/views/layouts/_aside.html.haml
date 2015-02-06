@@ -27,7 +27,7 @@
               = t('.no_followings_found')
           - else
             - followings.each do |following|
-              .row.user
+              .row.user{id: "js-following-#{following.id}"}
                 .col-xs-9.name
                   = following.followed
                 .col-xs-2

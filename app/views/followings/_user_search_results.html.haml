@@ -6,17 +6,10 @@
   - else
     %table.table
       - users.each do |user|
-        %tr
+        %tr{id: "js-followings-user-#{user.id}"}
           %td
             = user.name
           %td
             = user.email
-          %td
-            - if current_user.followed_ids.include? user.id
-              = link_to following_path(id: current_user.followings.select {|f| f.followed_id == user.id}.first.id), method: :delete, remote: true do
-                .btn.icon
-                  e
-            - else
-              = link_to followings_path(followed_id: user.id), method: :post, remote: true do
-                .btn.icon
-                  g
+          %td.js-toggle-follow
+            = toggle_follow_button current_user, user

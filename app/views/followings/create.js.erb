@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  alert('following created');
+  var app = new App();
+  $toggle_follow_button = $("<%= j toggle_follow_button @following.user, @following.followed %>");
+  app.refresh_content($('<%= "#js-followings-user-#{@following.followed.id}" %>').find('.js-toggle-follow'), $toggle_follow_button);
 });
