@@ -65,6 +65,7 @@ p, .bootstrap-tagsinput{
       border: 1px solid;
       border-color: $secondary;
       &:last-of-type{
+        padding-top: 7px;
         width: 10px;
       }
     }

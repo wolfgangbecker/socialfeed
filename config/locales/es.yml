@@ -271,6 +271,7 @@ es:
       notifications: Notificaciones
       following: Siguiendo a
       entries: Inicio
+      no_followings_found: No se encontraron seguimientos
     header:
       sign_out: Desconectar
       simple_feed_aggregator_with: Agregador de feeds simple con funcionalidades sociales

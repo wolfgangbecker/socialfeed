@@ -1,0 +1,5 @@
+$(document).ready(function(){
+  var app = new App();
+  $user_search_results = $("<%= j render 'user_search_results', users: @users %>");
+  app.refresh_content($('.js-results-container'), $user_search_results);
+});
