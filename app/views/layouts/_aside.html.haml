@@ -20,17 +20,5 @@
             = sidebar_link_to 'followings', controller_name do
               .btn.icon
                 g
-        .follow-panel.pre-scrollable
-          - if followings.empty?
-            .error-message.text-center.top-spacing-2
-              .glyphicon.glyphicon-exclamation-sign{aria: {hidden: 'true'}}
-              = t('.no_followings_found')
-          - else
-            - followings.each do |following|
-              .row.user{id: "js-following-#{following.id}"}
-                .col-xs-9.name
-                  = following.followed
-                .col-xs-2
-                  = link_to following_path(id: following.id), method: :delete do
-                    .btn.sidebar-btn.icon
-                      e
+        .follow-panel.pre-scrollable.js-followed-users-container
+          = render 'layouts/followed_users', followings: followings

@@ -11,7 +11,7 @@ class FollowingsController < ApplicationController
     @following = FollowingsService.build current_user, params
     respond_to do |format|
       if @following.save
-        format.js
+        format.js { render 'refresh_toggle_follow_button', status: :ok }
       else
         format.js { render 'error', status: :ok }
       end
@@ -22,7 +22,7 @@ class FollowingsController < ApplicationController
     @following = FollowingsService.destroy params
     respond_to do |format|
       if @following.errors.empty?
-        format.js
+        format.js { render 'refresh_toggle_follow_button', status: :ok }
       else
         format.js { render 'error', status: :ok }
       end

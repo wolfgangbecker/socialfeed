@@ -1,0 +1,7 @@
+- if followings.empty?
+  .error-message.text-center.top-spacing-2
+    .glyphicon.glyphicon-exclamation-sign{aria: {hidden: 'true'}}
+    = t('.no_followings_found')
+- else
+  - followings.each do |following|
+    = render 'layouts/followed_user', following: following

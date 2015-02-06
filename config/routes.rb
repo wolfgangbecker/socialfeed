@@ -15,7 +15,7 @@ Socialfeed::Application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'home#index', as: :authenticated_root
+      root to: 'entries#index', as: :authenticated_root
     end
 
     unauthenticated do
