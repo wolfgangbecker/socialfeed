@@ -280,6 +280,8 @@ es:
       contact: Contacto
       about: Información
       guide: Guía
+    followed_users:
+      no_followings_found: No se está siguiendo a ningún usuario
   feeds:
     feed_form:
       add_feed: Agregar feed

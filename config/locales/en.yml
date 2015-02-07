@@ -227,7 +227,7 @@ en:
       notifications: Notifications
       following: Following
       entries: Home
-      no_followings_found: No followings found
+      no_followings_found: No users are being followed
     header:
       sign_out: Sign out
       simple_feed_aggregator_with: Simple feed-aggregator with social functionality
@@ -236,6 +236,8 @@ en:
       contact: Contact
       about: About
       guide: Guide
+    followed_users:
+      no_followings_found: No followings found
   feeds:
     feed_form:
       add_feed: Add feed
