@@ -6,12 +6,11 @@
           = render 'form_fields', f: f
           .clearfix
     .row
-      .col-xs-4.col-xs-offset-8
-        %button.btn{type: "button", data: {dismiss: "modal"}}
-          %span.text
-            = t('.cancel')
-        %button.btn.js-submit{type: "button"}
-          %span.text
-            = t('.add')
-
-    -# &nbsp; &nbsp;
+      .col-xs-5.col-xs-offset-7
+        .pull-right
+          %button.btn{type: "button", data: {dismiss: "modal"}}
+            %span.text
+              = t('.cancel')
+          %button.btn.js-submit{type: "button", data: { disable_with: t('.adding') }}
+            %span.text
+              = t('.add')

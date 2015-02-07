@@ -16,8 +16,9 @@ class EntriesService
 
   # Returns the database stored entries of all feeds from the user
   def self.current_entries user, quantity, search_params = nil
-    search = Entry.ransack(search_params[:q])
-    if search_params[:q].blank? && !search_params[:category].blank?
+    q = search_params ? search_params[:q] : nil
+    search = Entry.ransack(q)
+    if search_params && search_params[:q].blank? && !search_params[:category].blank?
       categories = Category.find search_params[:category]
       entries = categories.map{|category| category.feeds.map {|feed| feed.entries }}
       entries.flatten!

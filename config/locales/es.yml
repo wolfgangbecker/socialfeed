@@ -287,6 +287,7 @@ es:
       add_feed: Agregar feed
       cancel: Cancelar
       add: Agregar
+      adding: Agregando...
     form_fields:
       paste_url_here: Pegar la URL aquí
       give_custom_title: Dar un título personalizado a este feed
