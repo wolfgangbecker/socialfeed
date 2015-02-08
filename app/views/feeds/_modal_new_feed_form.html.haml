@@ -1,5 +1,5 @@
 / Button trigger modal
-= link_to new_feed_path, remote: true do
+= link_to new_feed_path, remote: true, class: "#{'not-active' if @user}" do
   .btn.icon
     g
 

@@ -1,3 +1,4 @@
 = simple_form_for entries_path, method: :get do |f|
   .col-xs-4.input
     = select_tag :category, options_from_collection_for_select(Category.all, :id, :name, category._?.map(&:id)), multiple: true, placeholder: t('placeholders.all'), class: 'form-control'
+    = hidden_field_tag :user_id, @user.id if @user

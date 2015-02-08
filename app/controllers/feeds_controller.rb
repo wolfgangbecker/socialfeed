@@ -19,7 +19,7 @@ class FeedsController < ApplicationController
     @feed = FeedsService.create current_user, params
     respond_to do |format|
       if @feed.errors.empty?
-        @entries, @q = EntriesService.current_entries current_user, 50
+        @entries, @q = EntriesService.current_entries 50
         @entries = EntryDecorator.decorate_collection @entries
         @feeds = Feed.all
         format.js

@@ -1,7 +1,11 @@
 class EntriesController < ApplicationController
 
   def index
-    @entries, @q = EntriesService.current_entries current_user, 50, params
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      ActsAsTenant.current_tenant = @user
+    end
+    @entries, @q = EntriesService.current_entries 50, params
     @entries = EntryDecorator.decorate_collection @entries
     @feed = Feed.new
     unless params[:category].blank?

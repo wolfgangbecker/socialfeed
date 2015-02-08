@@ -1,6 +1,8 @@
 .row.user{id: "js-following-#{following.id}"}
-  .col-xs-9.name
-    = following.followed
+  .col-xs-9
+    = link_to entries_path(user_id: following.object.followed.id) do
+      .name
+        = following.followed
   .col-xs-2
     = link_to following_path(id: following.id), method: :delete, remote: true do
       .btn.sidebar-btn.icon

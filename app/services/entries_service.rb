@@ -1,7 +1,7 @@
 class EntriesService
 	# Fetches and parses entries from all feeds of the user and returns them
   def self.latest_entries user, quantity
-    feeds = user.feeds
+    feeds = Feed.all
     begin
     	feeds.each(&:update_entries)
     rescue Exception => e
@@ -15,7 +15,7 @@ class EntriesService
   end
 
   # Returns the database stored entries of all feeds from the user
-  def self.current_entries user, quantity, search_params = nil
+  def self.current_entries quantity, search_params = nil
     q = search_params ? search_params[:q] : nil
     search = Entry.ransack(q)
     if search_params && search_params[:q].blank? && !search_params[:category].blank?
@@ -26,13 +26,6 @@ class EntriesService
     else
       entries = search.result(distinct: true).order('published_at desc').first(quantity)
     end
-    # unless search_params[:category].blank?
-    #   categories = Category.find search_params[:category]
-    #   feed = categories.feeds
-    #   @category = [Category.find(search_params[:category])].flatten
-    # else
-    #   search = Entry.ransack(search_params[:q])
-    # end
     [entries, search]
   end
 end
