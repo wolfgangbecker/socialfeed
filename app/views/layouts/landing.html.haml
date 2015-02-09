@@ -17,8 +17,18 @@
       %p.alert
         = alert
     
-    .container
-      #content
-        = yield
+    .landing
+      .container-fluid
+        .row
+          .col-xs-12
+            .brand
+              = image_tag "brand.svg", class: 'img-responsive'
+            %p.text-center
+              = t('.keep_up_with_your_interests')
+        .row
+          = render 'devise/registrations/new'
+        .row
+          = render 'devise/sessions/new'
+        .row
 
     = yield :bottom_js

@@ -1,12 +1,14 @@
-= link_to t('.back'), :back
+=# link_to t('.back'), :back
 
-%h2 Sign up
+%h2 
+  = t('.sign_up')
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
   .form-inputs
     = f.input :email, required: false, autofocus: true
+    = f.input :name, required: false, autofocus: true
     = f.input :password, required: false
     = f.input :password_confirmation, required: false
   .form-actions
     = f.button :submit, "Sign up"
-= render "devise/shared/links"
+-# = render "devise/shared/links"
