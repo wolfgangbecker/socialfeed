@@ -26,9 +26,12 @@
             %p.text-center
               = t('.keep_up_with_your_interests')
         .row
-          = render 'devise/registrations/new'
+          .col-xs-8.col-xs-offset-2.box
+            .row
+              = render 'devise/registrations/new'
+            .row
+              = render 'devise/sessions/new'
         .row
-          = render 'devise/sessions/new'
-        .row
+      #footer
 
     = yield :bottom_js
