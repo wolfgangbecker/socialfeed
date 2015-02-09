@@ -1,10 +1,10 @@
 module EntriesHelper
 	def read_link entry
-		link_to entry.read, entry_path(entry, params: {entry: {read: !entry.object.read}}), method: :put, :remote => true
+		link_to entry.read, entry_path(entry, params: {entry: {read: !entry.object.read}}), method: :put, :remote => true, class: "#{'not-active' if @user}"
 	end
 
 	def favorite_link entry
-		link_to entry_path(entry, params: {entry: {favorite: !entry.object.favorite}}), method: :put, :remote => true do
+		link_to entry_path(entry, params: {entry: {favorite: !entry.object.favorite}}), method: :put, :remote => true, class: "#{'not-active' if @user}" do
 			content_tag(:div, 'c', class: "icon pull-right #{'favorited' if entry.favorite?}")
 		end
 	end
