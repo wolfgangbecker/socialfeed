@@ -267,6 +267,10 @@ p, .bootstrap-tagsinput{
           padding: 0.4em 0.4em 0.4em 0;
           background-color: lighten($lightblue, 5%);
           width: 90%;
+          &.selected{
+            background-color: $dprimary;
+            color: darken($icongray, 10%);
+          }
           .btn{
             background-color: lighten($lightblue, 10%);
           }
@@ -282,7 +286,7 @@ p, .bootstrap-tagsinput{
     height: 48.8em;
     .dashboard{
       background-color: $dprimary;
-      height: 65px;
+      height: 66px;
       overflow: visible;
       width: 100%;
       padding: 15px;

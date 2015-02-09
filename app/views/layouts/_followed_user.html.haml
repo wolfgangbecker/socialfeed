@@ -1,4 +1,4 @@
-.row.user{id: "js-following-#{following.id}"}
+.row.user{id: "js-following-#{following.id}", class: "#{'selected' if @user && @user.id == following.object.followed.id}"}
   .col-xs-9
     = link_to entries_path(user_id: following.object.followed.id) do
       .name
