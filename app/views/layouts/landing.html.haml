@@ -19,19 +19,39 @@
     
     .landing
       .container-fluid
-        .row
+        .row.brand
           .col-xs-12
-            .brand
-              = image_tag "brand.svg", class: 'img-responsive'
-            %p.text-center
+            = image_tag "brand.svg", class: 'img-responsive'
+            %p.text-center.lead
               = t('.keep_up_with_your_interests')
         .row
-          .col-xs-8.col-xs-offset-2.box
-            .row
-              = render 'devise/registrations/new'
-            .row
-              = render 'devise/sessions/new'
+          .col-xs-8.col-xs-offset-2
+            .box
+              .row
+                .col-xs-12
+                  = render 'devise/registrations/new'
+              .row
+                .col-xs-12
+                  = render 'devise/sessions/new'
+          .col-xs-8.col-xs-offset-2
+            .row.frames
+              .col-xs-4
+                .frame.pull-left
+                  = image_tag "box.svg", class: 'img-responsive box-img'
+                  .text-center
+                    = t('.store_feeds_in_a_single_place')
+              .col-xs-4
+                .frame.center
+                  = image_tag "newspaper.svg", class: 'img-responsive newspaper-img'
+                  .text-center
+                    = t('.stay_informed')
+              .col-xs-4
+                .frame.pull-right
+                  = image_tag "crowd.svg", class: 'img-responsive crowd-img'
+                  .text-center
+                    = t('.share_with_others')
+
         .row
-      #footer
+          = render 'layouts/footer'
 
     = yield :bottom_js

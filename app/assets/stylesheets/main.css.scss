@@ -90,6 +90,11 @@ p, .bootstrap-tagsinput{
 /* ==========================================================================
    Forms
    ========================================================================== */
+.landing{
+  form{
+
+  }
+}
 .main-container{
   form{
     // TODO: Fix select styles when in dropdown state
@@ -165,11 +170,62 @@ p, .bootstrap-tagsinput{
 /* ==========================================================================
    Landing
    ========================================================================== */
+%layout-common{
+  margin-left: -15px;
+  margin-right: -15px;
+  font-family: $font;
+  overflow-x: hidden;
+  width: 101.2%;
+  
+  .container-fluid{
+    padding-right: 0;
+  }
+}
+
 .landing{
+  @extend %layout-common;
   @include linear-gradient(lighten($primary, 10%), $dprimary);
+  .brand{
+    margin-top: 60px;
+    img{
+      width: 350px;
+      margin: 0 auto;
+    }
+    p{
+      margin: 20px auto;
+      color: $white;
+    }
+  }
   .box{
+    margin-bottom: 40px;
+    padding: 20px 40px;
     background-color: rgba($white, 0.58);
+    background-image: url("rssbg.svg");
+    background-repeat: no-repeat;
+    background-size: 550px 550px;
+    background-position: center;
     @include border-radius(15px);
+  }
+  .frame{
+    @include border-radius(15px);
+    padding: 20px;
+    background-color: $frame;
+    width: 250px;
+    height: 250px;
+    &.center{
+      margin: 0 auto;
+    }
+    .text-center{
+      line-height: 1.1;
+      font-size: 18px;
+    }
+    img{
+      margin: 0 auto 10px;
+      height: 170px;
+    }
+  }
+  #footer{
+    margin-top: 40px;
   }
 }
 
@@ -177,15 +233,7 @@ p, .bootstrap-tagsinput{
    Layout
    ========================================================================== */
 .main-container {
-  margin-left: -15px;
-  margin-right: -15px;
-  font-family: $font;
-  overflow-x: hidden;
-  width: 101.2%;
-
-  .container-fluid{
-    padding-right: 0;
-  }
+  @extend %layout-common;
 
   #header{
     @include linear-gradient($primary, $dprimary);

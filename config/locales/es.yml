@@ -262,6 +262,10 @@ es:
     registrations:
       new:
         back: Atrás
+        sign_up: Sign up
+    sessions:
+      new:
+        already_got_an_account: Already got an account
   layouts:
     aside:
       all: Todos
@@ -282,6 +286,12 @@ es:
       guide: Guía
     followed_users:
       no_followings_found: No se está siguiendo a ningún usuario
+    landing:
+      keep_up_with_your_interests: Manténgase al tanto con sus intereses y aquellos
+        de los demás
+      store_feeds_in_a_single_place: Almacene feeds en un único lugar
+      stay_informed: Manténgase informado
+      share_with_others: Comparta con otros
   feeds:
     feed_form:
       add_feed: Agregar feed

@@ -218,6 +218,10 @@ en:
     registrations:
       new:
         back: Back
+        sign_up: Sign up
+    sessions:
+      new:
+        already_got_an_account: Already got an account
   layouts:
     aside:
       all: All
@@ -238,6 +242,12 @@ en:
       guide: Guide
     followed_users:
       no_followings_found: No followings found
+    landing:
+      keep_up_with_your_interests: Keep up with your interests and those of whom you
+        care about
+      store_feeds_in_a_single_place: Store feeds in a single place
+      stay_informed: Stay informed
+      share_with_others: Share with others
   feeds:
     feed_form:
       add_feed: Add feed
