@@ -5,14 +5,14 @@
   .form-inputs.form-group
     .paddings
       .row
-        .col-xs-6
-          = f.input :email, required: false, label: false, autofocus: true, placeholder: User.human_attribute_name(:email), input_html: { class: 'form-control'}
-        .col-xs-6
-          = f.input :name, required: false, label: false, autofocus: true, placeholder: t('.pick_a_username'), input_html: { class: 'form-control'}
+        .col-md-6.col-xs-12
+          = f.input :email, required: false, label: false, placeholder: User.human_attribute_name(:email), input_html: { class: 'form-control'}
+        .col-md-6.col-xs-12
+          = f.input :name, required: false, label: false, placeholder: t('.pick_a_username'), input_html: { class: 'form-control'}
       .row
-        .col-xs-6
+        .col-md-6.col-xs-12
           = f.input :password, required: false, label: false, placeholder: User.human_attribute_name(:password), input_html: { class: 'form-control'}
-        .col-xs-6
+        .col-md-6.col-xs-12
           = f.input :password_confirmation, required: false, label: false, placeholder: t('.reenter_password'), input_html: { class: 'form-control'}
   .form-actions.text-center
     = f.button :submit, "#{t('.sign_up')}!", class: 'btn btn-warning'

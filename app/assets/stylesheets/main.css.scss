@@ -97,7 +97,7 @@ p, .bootstrap-tagsinput{
       .paddings{
         padding: 0 20px;
       }
-      .row{
+      div[class^="col-"]{
         margin-top: 20px;
       }
       a{
@@ -588,5 +588,12 @@ p, .bootstrap-tagsinput{
     height: 65px;
     width: 100%;
     background-image: url("wave.svg");
+  }
+  .license{
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: bold;
   }
 }

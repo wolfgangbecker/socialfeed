@@ -247,6 +247,7 @@ en:
       contact: Contact
       about: About
       guide: Guide
+      license: Copyright © 2015 MIT
     followed_users:
       no_followings_found: No followings found
     landing:

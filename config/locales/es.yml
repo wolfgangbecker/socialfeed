@@ -291,6 +291,7 @@ es:
       contact: Contacto
       about: Información
       guide: Guía
+      license: Copyright © 2015 MIT
     followed_users:
       no_followings_found: No se está siguiendo a ningún usuario
     landing:
