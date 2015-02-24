@@ -219,9 +219,16 @@ en:
       new:
         back: Back
         sign_up: Sign up
+        pick_a_username: Pick a username
+        reenter_password: Reenter password
     sessions:
       new:
-        already_got_an_account: Already got an account
+        already_got_an_account: Already got an account?
+        sign_in: Sign in
+        remember_me: Remember me
+    shared:
+      links:
+        forgot_your_password: Forgot your password
   layouts:
     aside:
       all: All

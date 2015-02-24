@@ -94,24 +94,58 @@ p, .bootstrap-tagsinput{
   form.form-inline{
     .form-group{
       display: inline;
+      .paddings{
+        padding: 0 20px;
+      }
       .row{
         margin-top: 20px;
       }
-    }
-    .button{
-      width: 100px;
+      a{
+        margin-left: 10px;
+        color: $black;
+        &:hover{
+          background-color: transparent;
+        }
+      }
+      label{
+        font-weight: normal;
+      }
     }
     .form-actions .button{
       margin-top: 20px;
     }
     input{
+      background-color: rgba(#e6e6e6, 0.768);
       &.checkbox{
-        width: 40px;
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
       }
-      width: 250px;
+      &.btn{
+        font-size: 16px;
+        &.btn-warning{
+          width: 120px;
+          color: $dprimary; 
+          background-color: $lyellow;
+          &:hover{
+            background-color: lighten($lyellow, 5%);
+          }
+        }
+        &.btn-primary{
+          width: 80px;
+          color: $white; 
+          background-color: $primary;
+          &:hover{
+            background-color: lighten($primary, 5%);
+          }
+        }
+      }
+      border-color: $primary;
+      width: 100%;
     }
   }
 }
+
 .main-container{
   form{
     // TODO: Fix select styles when in dropdown state
@@ -214,14 +248,15 @@ p, .bootstrap-tagsinput{
     }
   }
   .box{
-    margin-bottom: 40px;
     padding: 20px 40px 40px;
     background-color: rgba($white, 0.58);
-    background-image: url("rssbg.svg");
+    background-image: url("rssbg-upper.svg");
     background-repeat: no-repeat;
-    background-size: 550px 550px;
-    background-position: center;
+    background-position: center bottom;
     @include border-radius(15px);
+  }
+  .rss-lower{
+    margin: 0 auto 40px;
   }
   .frame{
     @include border-radius(15px);
@@ -230,7 +265,7 @@ p, .bootstrap-tagsinput{
     width: 250px;
     height: 250px;
     &.center{
-      margin: 0 auto;
+      margin: 0 auto 40px;
     }
     .text-center{
       line-height: 1.1;
@@ -240,9 +275,6 @@ p, .bootstrap-tagsinput{
       margin: 0 auto 10px;
       height: 170px;
     }
-  }
-  #footer{
-    margin-top: 40px;
   }
 }
 

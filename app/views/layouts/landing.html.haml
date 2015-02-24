@@ -33,24 +33,27 @@
               .row
                 .col-xs-12
                   = render 'devise/sessions/new'
-          .col-xs-8.col-xs-offset-2
-            .row.frames
-              .col-xs-4
-                .frame.pull-left
-                  = image_tag "box.svg", class: 'img-responsive box-img'
+            = image_tag "rssbg-lower.svg", class: 'img-responsive rss-lower'
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-xs-12.col-xs-offset-0
+            .row
+              .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-0
+                .frame.center
+                  = image_tag "box.svg", class: 'img-responsive'
                   .text-center
                     = t('.store_feeds_in_a_single_place')
-              .col-xs-4
+              .col-xs-1.hidden-sm.hidden-md.hidden-lg
+              .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-0
                 .frame.center
-                  = image_tag "newspaper.svg", class: 'img-responsive newspaper-img'
+                  = image_tag "newspaper.svg", class: 'img-responsive'
                   .text-center
                     = t('.stay_informed')
-              .col-xs-4
-                .frame.pull-right
-                  = image_tag "crowd.svg", class: 'img-responsive crowd-img'
+              .col-xs-1.hidden-sm.hidden-md.hidden-lg
+              .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-0
+                .frame.center
+                  = image_tag "crowd.svg", class: 'img-responsive'
                   .text-center
                     = t('.share_with_others')
-
+              .col-xs-1.hidden-sm.hidden-md.hidden-lg
         .row
           = render 'layouts/footer'
 

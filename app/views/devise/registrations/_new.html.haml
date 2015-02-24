@@ -1,16 +1,19 @@
-=# link_to t('.back'), :back
-
 %h2 
   = t('.sign_up')
 = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-inline' } do |f|
   = f.error_notification
   .form-inputs.form-group
-    .row
-      = f.input :email, required: false, autofocus: true, label_html: { class: 'col-xs-2' }, input_html: { class: 'form-control col-xs-4'}
-      = f.input :name, required: false, autofocus: true, label_html: { class: 'col-xs-2' }, input_html: { class: 'form-control col-xs-4'}
-    .row
-      = f.input :password, required: false, label_html: { class: 'col-xs-2' }, input_html: { class: 'form-control col-xs-4'}
-      = f.input :password_confirmation, required: false, label_html: { class: 'col-xs-2' }, input_html: { class: 'form-control col-xs-4'}
+    .paddings
+      .row
+        .col-xs-6
+          = f.input :email, required: false, label: false, autofocus: true, placeholder: User.human_attribute_name(:email), input_html: { class: 'form-control'}
+        .col-xs-6
+          = f.input :name, required: false, label: false, autofocus: true, placeholder: t('.pick_a_username'), input_html: { class: 'form-control'}
+      .row
+        .col-xs-6
+          = f.input :password, required: false, label: false, placeholder: User.human_attribute_name(:password), input_html: { class: 'form-control'}
+        .col-xs-6
+          = f.input :password_confirmation, required: false, label: false, placeholder: t('.reenter_password'), input_html: { class: 'form-control'}
   .form-actions.text-center
-    = f.button :submit, "Sign up", class: 'btn btn-default'
+    = f.button :submit, "#{t('.sign_up')}!", class: 'btn btn-warning'
 -# = render "devise/shared/links"

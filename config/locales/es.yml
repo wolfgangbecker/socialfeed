@@ -262,10 +262,17 @@ es:
     registrations:
       new:
         back: Atrás
-        sign_up: Sign up
+        sign_up: Registrarse
+        pick_a_username: Elija un nombre de usuario
+        reenter_password: Reingresar contraseña
     sessions:
       new:
-        already_got_an_account: Already got an account
+        already_got_an_account: Ya tiene una cuenta?
+        sign_in: Sign in
+        remember_me: Recordarme
+    shared:
+      links:
+        forgot_your_password: Olvidó su contraseña?
   layouts:
     aside:
       all: Todos
