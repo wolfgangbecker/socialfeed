@@ -29,10 +29,10 @@
             .box
               .row
                 .col-xs-12
-                  = render 'devise/registrations/new'
+                  = render 'devise/registrations/new', resource: controller_name == 'registrations' ? resource : User.new
               .row
                 .col-xs-12
-                  = render 'devise/sessions/new'
+                  = render 'devise/sessions/new', resource: controller_name == 'sessions' ? resource : User.new
             = image_tag "rssbg-lower.svg", class: 'img-responsive rss-lower'
           .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-xs-12.col-xs-offset-0
             .row

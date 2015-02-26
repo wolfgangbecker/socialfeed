@@ -110,6 +110,13 @@ p, .bootstrap-tagsinput{
       label{
         font-weight: normal;
       }
+      .field_with_errors{
+        input{
+          border-color: $error;
+        }
+        @include border-radius(5px);
+        background-color: $error;
+      }
     }
     .form-actions .button{
       margin-top: 20px;
