@@ -208,6 +208,15 @@ p, .bootstrap-tagsinput{
    Modals
    ========================================================================== */
 .modal{
+  &#notification{
+    font-size: 16px;
+    .danger{
+      background-color: $error;
+    }
+    .info{
+      background-color: $dprimary;
+    }
+  }
   .modal-content, .modal-body{
     .btn{
       &:last-of-type{

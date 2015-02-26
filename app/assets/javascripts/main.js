@@ -44,4 +44,5 @@ $(document).ready(function(){
   app.apply_select2();
   app.apply_tooltip();
   app.initiate_forms();
+  $('#notification').modal('show');
 });

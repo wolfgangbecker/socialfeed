@@ -8,6 +8,11 @@
     = csrf_meta_tags
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
   %body
+    - if notice
+      = render 'layouts/notification', message: notice, type: 'info'
+    - if alert
+      = render 'layouts/notification', message: alert, type: 'danger'
+
     .main-container
       .container-fluid
         = render 'layouts/header'
