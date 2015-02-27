@@ -251,8 +251,7 @@ en:
     followed_users:
       no_followings_found: No followings found
     landing:
-      keep_up_with_your_interests: Keep up with your interests and those of whom you
-        care about
+      keep_up_with_your_interests: Keep up with your interests and those of whom you care about
       store_feeds_in_a_single_place: Store feeds in a single place
       stay_informed: Stay informed
       share_with_others: Share with others
@@ -288,8 +287,7 @@ en:
       edit: Edit
     index:
       categories: Categories
-      create_a_new_category: Create or edit categories, view existing ones with their
-        assigned feeds or delete them.
+      create_a_new_category: Create or edit categories, view existing ones with their assigned feeds or delete them.
       new: New
       list: List
       description: Description
@@ -373,6 +371,7 @@ en:
         notify_new_follower: Notify new follower
         notify_site_updates: Notify site updates
         notify_important_topics: Notify important topics
+        password: Contraseña
   followings:
     search_form:
       search_by_name: Search by name

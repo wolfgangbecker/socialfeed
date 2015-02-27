@@ -2,7 +2,7 @@
   = t('.already_got_an_account')
 = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: {novalidate: true, class: 'form-inline' } do |f|
   .form-inputs.form-group
-    .paddings
+    .paddings-sm
       .row
         .col-md-6.col-sm-8.col-xs-12
           = f.input :email, required: false, autofocus: controller_name == 'sessions', label: false, placeholder: User.human_attribute_name(:email), input_html: {class: 'form-control'}

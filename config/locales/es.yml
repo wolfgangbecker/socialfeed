@@ -31,6 +31,7 @@ es:
       user:
         email: Email
         name: Nombre
+        password: Contraseña
         notify_new_follower: Notificar nuevo seguidor
         notify_site_updates: Notificar cambios del sitio
         notify_important_topics: Notificar temas importantes
@@ -264,7 +265,7 @@ es:
         back: Atrás
         sign_up: Registrarse
         pick_a_username: Elija un nombre de usuario
-        reenter_password: Reingresar contraseña
+        reenter_password: Reingrese la contraseña
     sessions:
       new:
         already_got_an_account: Ya tiene una cuenta?
