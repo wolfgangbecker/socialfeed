@@ -9,7 +9,7 @@ es:
     failure:
       already_authenticated: "Ya ha iniciado sesión."
       inactive: "Su cuenta aún no ha sido activada."
-      invalid: "%{authentication_keys} o contraseña inválidos."
+      invalid: "Dirección de email o contraseña inválidas."
       locked: "Su cuenta ha sido bloqueada."
       last_attempt: "Tiene un último intento antes de que su cuenta sea bloqueada."
       not_found_in_database: "Correo o contraseña inválidos."
