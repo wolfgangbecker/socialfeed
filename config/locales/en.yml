@@ -280,7 +280,7 @@ en:
   filters:
     index:
       filters: Filters
-      filter_out_certain_entries: Filter out certain entries
+      filter_out_certain_entries: Filter out certain entries based on their content. Select a feed and one of the following filtering options.
     filter_form:
       enter_keywords: Enter keywords
       whitelist: Whitelist
@@ -296,7 +296,7 @@ en:
       general_notifications: General notifications
     index:
       notifications: Notifications
-      choose_keywords_for_each: Choose keywords for each
+      choose_keywords_for_each: Choose keywords for each of your feeds. We willsend you an email when a matching feed-entry shows up.
   notification_mailer:
     notify_entries:
       important_topic_mentioned_in_entry: Important topic mentioned in entry
@@ -305,7 +305,7 @@ en:
       view_website: View website
       published_on: Published on
     notify_entry:
-      important_topic_mntioned_in_entry: Important topic mntioned in entry
+      important_topic_mentioned_in_entry: Important topic mntioned in entry
   activerecord:
     models:
       category:

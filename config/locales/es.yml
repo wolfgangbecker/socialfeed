@@ -325,7 +325,7 @@ es:
   filters:
     index:
       filters: Filtros
-      filter_out_certain_entries: Filtrar ciertas entradas
+      filter_out_certain_entries: Filtrar ciertas entradas en base al contenido. Seleccione un feed y una de las siguientes opciones de filtrado.
     filter_form:
       enter_keywords: Ingrese palabras clave
       whitelist: Lista Blanca
@@ -341,7 +341,7 @@ es:
       general_notifications: Notificaciones Generales
     index:
       notifications: Notificaciones
-      choose_keywords_for_each: Elija palabras clave para cada una
+      choose_keywords_for_each: Elija palabras clave para cada uno de sus feeds. Le enviaremos un email cuando aparezca una entrada que contenga alguna de las palabras clave.
   notification_mailer:
     notify_entries:
       important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
@@ -350,7 +350,7 @@ es:
       view_website: Ver en sitio web
       published_on: Publicado el
     notify_entry:
-      important_topic_mntioned_in_entry: Temas importantes mencionados en las entradas
+      important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
   followings:
     search_form:
       search_by_name: Buscar por nombre

@@ -477,6 +477,9 @@ p, .bootstrap-tagsinput{
         padding: 20px;
         overflow: auto;
         background-color: $dsecondary;
+        p{
+          font-size: 14px;
+        }
         .box{
           @include border-radius(15px);
           width: 100%;
