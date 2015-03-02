@@ -402,6 +402,9 @@ p, .bootstrap-tagsinput{
           .btn{
             background-color: lighten($lightblue, 10%);
           }
+          a, a:visited{
+            color: $black;
+          }
           .name{
             margin-top: 10px;
           }
@@ -552,7 +555,7 @@ p, .bootstrap-tagsinput{
           .btn{
             display: inline-block;
             float: right;
-            backgrounfd-color: $white;
+            background-color: $white;
             color: $gray;
             @include border-radius(10px);
           }
