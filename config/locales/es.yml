@@ -354,9 +354,9 @@ es:
     notify_entry:
       important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
     notify_following:
-      another_user_is_following_you: Another user is following you
-      follower_name: "The followers name is %{name}"
-      follower_email: "The followers email is %{email}"
+      another_user_is_following_you: Otro usuario lo está siguiendo
+      follower_name: "El nombre del seguidor es %{name}"
+      follower_email: "La dirección de email del seguidor es %{email}"
       go_to_followings: Go to followings
   followings:
     search_form:
