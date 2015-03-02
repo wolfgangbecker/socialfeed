@@ -357,7 +357,7 @@ es:
       another_user_is_following_you: Otro usuario lo está siguiendo
       follower_name: "El nombre del seguidor es %{name}"
       follower_email: "La dirección de email del seguidor es %{email}"
-      go_to_followings: Go to followings
+      go_to_followings: Ir a seguir usuario
   followings:
     search_form:
       search_by_name: Buscar por nombre
