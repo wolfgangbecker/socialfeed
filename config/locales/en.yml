@@ -43,6 +43,16 @@ en:
         other: "%{count} errors prohibited this %{model} from being saved"
     can_not_be_destroyed: Can not be destroyed
     can_not_be_edited: Can not be edited
+  notifications:
+    user_notifications:
+      apply: Apply
+      general_notifications: General notifications
+    notification_form:
+      delete: Delete
+      apply: Apply
+    index:
+      notifications: Notifications
+      choose_keywords_for_each: Choose keywords for each of your feeds. We willsend you an email when a matching feed-entry shows up.
   date:
     abbr_day_names:
     - Sun
@@ -287,16 +297,6 @@ en:
       blacklist: Blacklist
       apply: Apply
       delete: Delete
-  notifications:
-    notification_form:
-      delete: Delete
-      apply: Apply
-    user_notifications:
-      apply: Apply
-      general_notifications: General notifications
-    index:
-      notifications: Notifications
-      choose_keywords_for_each: Choose keywords for each of your feeds. We willsend you an email when a matching feed-entry shows up.
   notification_mailer:
     notify_entries:
       important_topic_mentioned_in_entry: Important topic mentioned in entry
@@ -304,8 +304,15 @@ en:
       feed: 'Feed: %{feed}'
       view_website: View website
       published_on: Published on
+      important_topic_notification: Important Topic Notification
+      following_notification: Following Notification
     notify_entry:
-      important_topic_mentioned_in_entry: Important topic mntioned in entry
+      important_topic_mentioned_in_entry: Important topic mentioned in entry
+    notify_following:
+      another_user_is_following_you: Another user is following you
+      follower_name: Follower name
+      follower_email: Follower email
+      go_to_followings: Go to followings
   activerecord:
     models:
       category:

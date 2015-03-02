@@ -15,17 +15,17 @@ data:
 
   # Locale files to read from
   read:
-    - config/locales/devise.%{locale}.yml
     - config/locales/%{locale}.yml
+    - config/locales/devise.%{locale}.yml
     # - config/locales/*.%{locale}.yml
     # - config/locales/**/*.%{locale}.yml
 
   # key => file routes, matched top to bottom
   write:
     ## E.g., write devise and simple form keys to their respective files
-    - config/locales/devise.%{locale}.yml
     # Catch-all
     - config/locales/%{locale}.yml
+    - config/locales/devise.%{locale}.yml
     # `i18n-tasks normalize -p` will force move the keys according to these rules
 
   # YAML / JSON serializer options, passed to load / dump / parse / serialize

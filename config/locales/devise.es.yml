@@ -1,5 +1,18 @@
 ---
 es:
+  errors:
+    messages:
+      already_confirmed: ya ha sido confirmado, por favor intente iniciar sesión.
+      confirmation_period_expired: necesita ser confirmado en %{period}, por favor vuelva a solicitarla.
+      expired: ha expirado, por favor vuelva a solicitarla.
+      not_found: no se ha encontrado.
+      not_locked: no estaba bloqueado.
+      not_saved:
+        one: '1 error impidió que este %{resource} fuera guardado:'
+        other: "%{count} errores impidieron que este %{resource} fuera guardado:"
+  notifications:
+    user_notifications:
+      turn_general_user_level_notifications: Active o desactive notificaciones generales a nivel de usuario. Si desactiva las notificaciones de temas importantes no recibirá notificaciones sobre entradas, aún cuando estas estén establecidas.
   devise:
     confirmations:
       confirmed: Su cuenta ha sido confirmada.
@@ -61,16 +74,3 @@ es:
       send_instructions: Recibirá un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear su cuenta.
       send_paranoid_instructions: Si su cuenta existe, recibirá un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear su cuenta.
       unlocked: Su cuenta ha sido desbloqueada. Por favor inicie sesión para continuar.
-  errors:
-    messages:
-      already_confirmed: ya ha sido confirmado, por favor intente iniciar sesión.
-      confirmation_period_expired: necesita ser confirmado en %{period}, por favor vuelva a solicitarla.
-      expired: ha expirado, por favor vuelva a solicitarla.
-      not_found: no se ha encontrado.
-      not_locked: no estaba bloqueado.
-      not_saved:
-        one: '1 error impidió que este %{resource} fuera guardado:'
-        other: "%{count} errores impidieron que este %{resource} fuera guardado:"
-  notifications:
-    user_notifications:
-      turn_general_user_level_notifications: "Active o desactive notificaciones generales a nivel de usuario. Si desactiva las notificaciones de temas importantes no recibirá notificaciones sobre entradas, aún cuando estas estén establecidas."

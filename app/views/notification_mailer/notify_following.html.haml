@@ -1,0 +1,10 @@
+%h1
+  = t('.another_user_is_following_you')
+
+%p
+  = t('.follower_name', name: @follower.name)
+  %br
+  = t('.follower_email', email: @follower.email)
+
+%p
+  = link_to t('.go_to_followings'), followings_url, target: '_blank'

@@ -37,6 +37,16 @@ es:
         other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
     can_not_be_destroyed: No puede ser borrado
     can_not_be_edited: No puede ser editado
+  notifications:
+    user_notifications:
+      apply: Aplicar
+      general_notifications: Notificaciones Generales
+    notification_form:
+      delete: Borrar
+      apply: Aplicar
+    index:
+      notifications: Notificaciones
+      choose_keywords_for_each: Elija palabras clave para cada uno de sus feeds. Le enviaremos un email cuando aparezca una entrada que contenga alguna de las palabras clave.
   activerecord:
     models:
       filter:
@@ -332,16 +342,6 @@ es:
       blacklist: Lista Negra
       apply: Aplicar
       delete: Borrar
-  notifications:
-    notification_form:
-      delete: Borrar
-      apply: Aplicar
-    user_notifications:
-      apply: Aplicar
-      general_notifications: Notificaciones Generales
-    index:
-      notifications: Notificaciones
-      choose_keywords_for_each: Elija palabras clave para cada uno de sus feeds. Le enviaremos un email cuando aparezca una entrada que contenga alguna de las palabras clave.
   notification_mailer:
     notify_entries:
       important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
@@ -349,8 +349,15 @@ es:
       feed: 'Feed: %{feed}'
       view_website: Ver en sitio web
       published_on: Publicado el
+      important_topic_notification: Notificación de Tema Importante
+      following_notification: Notificación de Seguimiento
     notify_entry:
       important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
+    notify_following:
+      another_user_is_following_you: Another user is following you
+      follower_name: "The followers name is %{name}"
+      follower_email: "The followers email is %{email}"
+      go_to_followings: Go to followings
   followings:
     search_form:
       search_by_name: Buscar por nombre
