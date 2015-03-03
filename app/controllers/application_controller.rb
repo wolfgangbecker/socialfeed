@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   set_current_tenant_through_filter
   before_filter :setup
   layout :layout_by_resource
+  before_filter :authenticate_user!
 
   def find_current_tenant
     set_current_tenant(current_user)
