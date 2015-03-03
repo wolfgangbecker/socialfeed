@@ -23,6 +23,10 @@ h1{
   cursor: default;
   div{
     background-color: lighten($gray, 10%) !important;
+    .entry &.icon{
+      background-color: transparent !important;
+      color: $gray !important;
+    }
   }
 }
 
