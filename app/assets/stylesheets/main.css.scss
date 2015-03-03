@@ -447,6 +447,10 @@ p, .bootstrap-tagsinput{
         margin-bottom: 15px;
         overflow-x: hidden;
         background-color: $secondary;
+        img{
+          border-radius: 5px;
+          border: 2px solid $gray;
+        }
         &.read{
           background-color: lighten($secondary, 10%);
         }
