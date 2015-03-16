@@ -13,8 +13,8 @@
             %span
               = link_to entry.feed.category, category_path(entry.feed.category), class: "#{'not-active' if @user}"
             = '/'
-            %span
-              = link_to entry.feed, feed_path(entry.feed), class: "#{'not-active' if @user}"
+            %a
+              = entry.feed
           .col-xs-2
             %span.js-read-link
               = read_link(entry)
