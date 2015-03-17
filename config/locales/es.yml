@@ -333,6 +333,8 @@ es:
       list: Lista
       description: Descripción
       tags: Etiquetas
+    category:
+      are_you_sure: "Esta categoría tiene feeds asociados, seguro que desea borrarla?"
   filters:
     index:
       filters: Filtros

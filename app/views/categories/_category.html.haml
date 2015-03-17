@@ -12,7 +12,7 @@
           = category.name
     .col-xs-1
       - if category.editable
-        = link_to category_path(category), method: :delete, remote: true do
+        = link_to category_path(category), method: :delete, remote: true, data: {confirm: category.feeds.any? ? t('.are_you_sure') : nil} do
           .btn.icon.delete-btn
             e
   .feeds.row.collapse{id: "category-feeds#{category.id}"}

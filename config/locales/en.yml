@@ -288,6 +288,8 @@ en:
       list: List
       description: Description
       tags: Tags
+    category:
+      are_you_sure: "This category has feeds associated with it, do you wish to delete it anyways?"
   filters:
     index:
       filters: Filters
