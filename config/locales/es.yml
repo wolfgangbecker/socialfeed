@@ -283,6 +283,7 @@ es:
       sign_out: Desconectar
       simple_feed_aggregator_with: Agregador de feeds simple con funcionalidades sociales
       preferences: Preferencias
+      are_you_sure: Está seguro que desea cancelar su cuenta?
     footer:
       contact: Contacto
       about: Información
@@ -355,8 +356,8 @@ es:
       important_topic_mentioned_in_entry: Temas importantes mencionados en las entradas
     notify_following:
       another_user_is_following_you: Otro usuario lo está siguiendo
-      follower_name: "El nombre del seguidor es %{name}"
-      follower_email: "La dirección de email del seguidor es %{email}"
+      follower_name: El nombre del seguidor es %{name}
+      follower_email: La dirección de email del seguidor es %{email}
       go_to_followings: Ir a seguir usuario
   followings:
     search_form:
@@ -370,3 +371,4 @@ es:
       results: Resultados
     user_search_results:
       no_users_found: No se encontraron usuarios
+  cancel_account: Cancelar Cuenta

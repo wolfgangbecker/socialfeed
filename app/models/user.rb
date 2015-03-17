@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :notify_new_follower, :notify_site_updates, :notify_important_topics, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   after_create :associate_undefined_category
+  before_destroy :skip_category_callbacks
   #
   # schema
   #
@@ -55,6 +56,11 @@ class User < ActiveRecord::Base
   #
   # Methods
   # 
+
+  def skip_category_callbacks
+    Category.skip_callback(:destroy, :before, :check_if_destroyable)
+  end
+
   def associate_undefined_category
     Category.create! name: I18n.t('placeholders.undefined'), editable: false, user_id: self.id
   end

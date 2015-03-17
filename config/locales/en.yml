@@ -238,6 +238,7 @@ en:
       sign_out: Sign out
       simple_feed_aggregator_with: Simple feed-aggregator with social functionality
       preferences: Preferences
+      are_you_sure: Are you sure you wish to cancel your account?
     footer:
       contact: Contact
       about: About
@@ -376,3 +377,4 @@ en:
       results: Results
     user_search_results:
       no_users_found: No users found
+  cancel_account: Cancel Account

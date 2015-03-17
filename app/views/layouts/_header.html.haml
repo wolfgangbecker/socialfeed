@@ -19,7 +19,6 @@
               b
           %ul.dropdown-menu.dropdown-menu-right{aria: {labelledby: "user-dropdown"}}
             %li
-              %a{href: "#"}
-                = t('.preferences')
+              = link_to t('cancel_account'), user_registration_path, method: :delete, data: {confirm: t('.are_you_sure')}
             %li
               = link_to t('.sign_out'), destroy_user_session_path, method: :delete
