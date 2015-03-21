@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
 
   def index
     if params[:user_id]
-      @user = User.find(params[:user_id])
+      @user = current_user.followeds.find(params[:user_id])
       ActsAsTenant.current_tenant = @user
     end
     @entries, @q = EntriesService.current_entries 50, params
