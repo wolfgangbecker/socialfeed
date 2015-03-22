@@ -228,6 +228,7 @@ p, .bootstrap-tagsinput{
   }
   .modal-content, .modal-body{
     .btn{
+      color: $black !important;
       &:last-of-type{
         margin-left: 20px;
       }
