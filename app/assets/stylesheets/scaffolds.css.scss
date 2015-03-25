@@ -1,3 +1,5 @@
+@import "sass_defaults";
+
 body {
   background-color: #fff;
   color: #333;
@@ -41,7 +43,7 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: $error;
   display: table;
 }
 
