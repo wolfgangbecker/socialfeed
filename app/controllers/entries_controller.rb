@@ -9,8 +9,9 @@ class EntriesController < ApplicationController
     @entries = EntryDecorator.decorate_collection @entries
     @feed = Feed.new
     unless params[:category].blank?
-      @feeds = Feed.where(category_id: params[:category])
-      @category = [Category.find(params[:category])].flatten
+      category_ids = params[:category].split
+      @feeds = Feed.where(category_id: category_ids)
+      @category = [Category.find(category_ids)].flatten
     else
       @feeds = Feed.all
     end
