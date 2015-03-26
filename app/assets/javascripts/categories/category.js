@@ -15,6 +15,7 @@
     var category = this;
     $(category.ui.form_container).fadeOut("slow", function() {
       $(category.ui.form_container).html($form);
+      (new App()).apply_tagsinput();
       $(category.ui.form_container).fadeIn('slow');
     });
   };
