@@ -52,7 +52,7 @@ class Feed < ActiveRecord::Base
       end
       self.etag = feed.etag
       self.last_modified = feed.last_modified
-      Entry.add_entries(feed.entries, self.id, user_id)
+      Entry.add_entries(feed.entries.first(50), self.id, user_id)
     end
     notification_entries
   end
