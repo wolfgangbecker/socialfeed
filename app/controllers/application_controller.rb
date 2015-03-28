@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :setup
   layout :layout_by_resource
   before_filter :authenticate_user!
+  rescue_from SQLite3::BusyException, with: :database_locked
 
   def find_current_tenant
     set_current_tenant(current_user)
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
   def setup
     find_current_tenant
     set_followings
+  end
+
+  def database_locked
+    redirect_to :back, alert: I18n.t('errors.messages.could_not_process')
   end
 
   protected

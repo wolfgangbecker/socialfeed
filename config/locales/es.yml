@@ -29,6 +29,7 @@ es:
         one: Cannot delete record because a dependent %{record} exists
         many: Cannot delete record because dependent %{record} exist
       other_than: must be other than %{count}
+      could_not_process: 'No se pudo procesar su petición, por favor intente nuevamente'
     format: "%{attribute} %{message}"
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
@@ -334,7 +335,7 @@ es:
       description: Descripción
       tags: Etiquetas
     category:
-      are_you_sure: "Esta categoría tiene feeds asociados, seguro que desea borrarla?"
+      are_you_sure: Esta categoría tiene feeds asociados, seguro que desea borrarla?
   filters:
     index:
       filters: Filtros

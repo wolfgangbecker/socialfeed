@@ -35,6 +35,7 @@ en:
         other: is the wrong length (should be %{count} characters)
       other_than: must be other than %{count}
       invalid_feed_url: URL inválida
+      could_not_process: 'Could not process your petition, please try again'
     format: "%{attribute} %{message}"
     template:
       body: 'There were problems with the following fields:'
@@ -289,7 +290,7 @@ en:
       description: Description
       tags: Tags
     category:
-      are_you_sure: "This category has feeds associated with it, do you wish to delete it anyways?"
+      are_you_sure: This category has feeds associated with it, do you wish to delete it anyways?
   filters:
     index:
       filters: Filters
